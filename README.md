@@ -1,12 +1,12 @@
 # dotfiles!
 
-## Install (WIP)
+## Install
 
 ```
 ./install
 ```
 
-## Uninstall (WIP)
+## Uninstall
 
 ```
 ./uninstall
