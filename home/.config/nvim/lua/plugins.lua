@@ -8,7 +8,7 @@ vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function()
   use 'wbthomason/packer.nvim'
-  use 'arcticicestudio/nord-vim'
+  use {'arcticicestudio/nord-vim', requires = {'tribela/vim-transparent'}}
   use 'editorconfig/editorconfig-vim'
   use {'windwp/nvim-autopairs', config = function() require('nvim-autopairs').setup {} end}
 end)
