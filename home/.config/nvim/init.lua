@@ -32,3 +32,5 @@ vim.api.nvim_set_keymap('n', 'L', '$', {noremap = true})
 vim.api.nvim_set_keymap('n', 'U', '<C-r>', {noremap = true})
 vim.api.nvim_set_keymap('n', 'Y', 'y$', {noremap = true})
 vim.api.nvim_set_keymap('v', 'v', '<Esc>', {noremap = true})
+
+require 'init_local'
