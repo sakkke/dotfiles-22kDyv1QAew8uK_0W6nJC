@@ -8,6 +8,11 @@ vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function()
   use 'wbthomason/packer.nvim'
+  use {
+    'akinsho/bufferline.nvim',
+    config = function () require('bufferline').setup {} end,
+    requires = 'kyazdani42/nvim-web-devicons',
+  }
   use {'arcticicestudio/nord-vim', requires = {'tribela/vim-transparent'}}
   use 'editorconfig/editorconfig-vim'
   use {
