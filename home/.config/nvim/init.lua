@@ -8,6 +8,7 @@ vim.o.relativenumber = true
 vim.o.showmode = false
 vim.o.termguicolors = true
 vim.o.wrap = false
+vim.g.mapleader = ' '
 vim.cmd [[colorscheme nord]]
 
 -- Emack like
