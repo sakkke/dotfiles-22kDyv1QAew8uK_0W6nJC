@@ -43,5 +43,14 @@ return require('packer').startup(function()
       }
     end,
   }
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    config = function()
+      require('nvim-treesitter.configs').setup {
+        highlight = {enable = true},
+      }
+    end,
+    run = ':TSUpdate',
+  }
   use {'windwp/nvim-autopairs', config = function() require('nvim-autopairs').setup {} end}
 end)
