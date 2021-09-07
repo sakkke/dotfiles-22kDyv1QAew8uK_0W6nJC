@@ -1,5 +1,6 @@
 require 'plugins'
 
+vim.o.mouse = 'a'
 vim.o.termguicolors = true
 vim.cmd [[colorscheme nord]]
 
