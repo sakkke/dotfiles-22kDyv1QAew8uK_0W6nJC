@@ -30,6 +30,17 @@ return require('packer').startup(function()
     config = function()
       vim.api.nvim_set_keymap('n', '<LeftDrag>', '<Cmd>lua require("gesture").draw()<CR>', {noremap = true, silent = true})
       vim.api.nvim_set_keymap('n', '<LeftRelease>', '<Cmd>lua require("gesture").finish()<CR>', {noremap = true, silent = true})
+      local gesture = require 'gesture'
+      gesture.register {
+        name = 'Gina commit',
+        inputs = {gesture.left(), gesture.down(), gesture.right()},
+        action = 'Gina --opener=tabnew commit',
+      }
+      gesture.register {
+        name = 'Gina status',
+        inputs = {gesture.down(), gesture.right(), gesture.down()},
+        action = 'Gina --opener=tabnew status -s',
+      }
     end,
   }
   use {'windwp/nvim-autopairs', config = function() require('nvim-autopairs').setup {} end}
