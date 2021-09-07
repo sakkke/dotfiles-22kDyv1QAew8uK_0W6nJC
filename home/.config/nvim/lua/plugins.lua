@@ -19,6 +19,13 @@ return require('packer').startup(function()
     'folke/which-key.nvim',
     config = function()
       require('which-key').setup {}
+      local wk = require 'which-key'
+      wk.register({
+        t = {
+          name = 'toggle',
+          t = {'<Cmd>NvimTreeToggle<CR>', 'NvimTree'},
+        },
+      }, {prefix = '<Leader>'})
     end,
   }
   use {
@@ -29,6 +36,10 @@ return require('packer').startup(function()
       }
     end,
     requires = {'kyazdani42/nvim-web-devicons', opt = true},
+  }
+  use {
+    'kyazdani42/nvim-tree.lua',
+    requires = 'kyazdani42/nvim-web-devicons',
   }
   use 'lambdalisue/gina.vim'
   use {
