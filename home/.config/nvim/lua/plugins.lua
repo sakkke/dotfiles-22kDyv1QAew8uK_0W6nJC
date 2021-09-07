@@ -25,5 +25,12 @@ return require('packer').startup(function()
     requires = {'kyazdani42/nvim-web-devicons', opt = true},
   }
   use 'lambdalisue/gina.vim'
+  use {
+    'notomo/gesture.nvim',
+    config = function()
+      vim.api.nvim_set_keymap('n', '<LeftDrag>', '<Cmd>lua require("gesture").draw()<CR>', {noremap = true, silent = true})
+      vim.api.nvim_set_keymap('n', '<LeftRelease>', '<Cmd>lua require("gesture").finish()<CR>', {noremap = true, silent = true})
+    end,
+  }
   use {'windwp/nvim-autopairs', config = function() require('nvim-autopairs').setup {} end}
 end)
