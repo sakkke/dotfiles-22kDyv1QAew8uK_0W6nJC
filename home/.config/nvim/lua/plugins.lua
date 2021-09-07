@@ -24,5 +24,6 @@ return require('packer').startup(function()
     end,
     requires = {'kyazdani42/nvim-web-devicons', opt = true},
   }
+  use 'lambdalisue/gina.vim'
   use {'windwp/nvim-autopairs', config = function() require('nvim-autopairs').setup {} end}
 end)
