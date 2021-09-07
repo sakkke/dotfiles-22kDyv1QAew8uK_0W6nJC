@@ -10,5 +10,10 @@ return require('packer').startup(function()
   use 'wbthomason/packer.nvim'
   use {'arcticicestudio/nord-vim', requires = {'tribela/vim-transparent'}}
   use 'editorconfig/editorconfig-vim'
+  use {
+    'hoob3rt/lualine.nvim',
+    config = function () require('lualine').setup() end,
+    requires = {'kyazdani42/nvim-web-devicons', opt = true},
+  }
   use {'windwp/nvim-autopairs', config = function() require('nvim-autopairs').setup {} end}
 end)
