@@ -16,6 +16,12 @@ return require('packer').startup(function()
   use {'arcticicestudio/nord-vim', requires = {'tribela/vim-transparent'}}
   use 'editorconfig/editorconfig-vim'
   use {
+    'folke/which-key.nvim',
+    config = function()
+      require('which-key').setup {}
+    end,
+  }
+  use {
     'hoob3rt/lualine.nvim',
     config = function ()
       require('lualine').setup {
