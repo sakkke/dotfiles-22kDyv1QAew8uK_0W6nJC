@@ -3,6 +3,8 @@ require 'plugins'
 vim.o.cursorcolumn = true
 vim.o.cursorline = true
 vim.o.hidden = true
+vim.o.list = true
+vim.o.listchars = 'eol:⏎,extends:»,nbsp:*,precedes:«,space:·,tab:»-,trail:-'
 vim.o.mouse = 'a'
 vim.o.number = true
 vim.o.relativenumber = true
