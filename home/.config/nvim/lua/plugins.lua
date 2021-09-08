@@ -81,7 +81,22 @@ return require('packer').startup(function()
   use {
     'lukas-reineke/indent-blankline.nvim',
     config = function()
-      require('indent_blankline').setup {}
+      vim.cmd [[
+        highlight IndentBlanklineIndent1 guifg=#bf616a blend=nocombine " nord11
+        highlight IndentBlanklineIndent2 guifg=#d08770 blend=nocombine " nord12
+        highlight IndentBlanklineIndent3 guifg=#ebcb8b blend=nocombine " nord13
+        highlight IndentBlanklineIndent4 guifg=#a3be8c blend=nocombine " nord14
+        highlight IndentBlanklineIndent5 guifg=#b48ead blend=nocombine " nord15
+      ]]
+      require('indent_blankline').setup {
+        char_highlight_list = {
+          'IndentBlanklineIndent1',
+          'IndentBlanklineIndent2',
+          'IndentBlanklineIndent3',
+          'IndentBlanklineIndent4',
+          'IndentBlanklineIndent5',
+        },
+      }
     end,
   }
   use 'junegunn/goyo.vim'
