@@ -59,6 +59,15 @@ return require('packer').startup(function()
     requires = {'kyazdani42/nvim-web-devicons', opt = true},
   }
   use {
+    'kana/vim-textobj-user',
+    requires = {
+      'glts/vim-textobj-indblock', -- `ao`/`io`
+      'kana/vim-textobj-indent', -- `ai`/`ii`,`aI`,`iI`
+      'kana/vim-textobj-syntax', -- `ay`/`iy`
+      'mattn/vim-textobj-url', -- `au`/`iu`
+    },
+  }
+  use {
     'kyazdani42/nvim-tree.lua',
     requires = 'kyazdani42/nvim-web-devicons',
   }
