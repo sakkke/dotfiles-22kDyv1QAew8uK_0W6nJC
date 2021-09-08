@@ -2,6 +2,7 @@ require 'plugins'
 
 vim.o.cursorcolumn = true
 vim.o.cursorline = true
+vim.o.hidden = true
 vim.o.mouse = 'a'
 vim.o.number = true
 vim.o.relativenumber = true
