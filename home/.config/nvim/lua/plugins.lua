@@ -88,7 +88,13 @@ return require('packer').startup(function()
     requires = 'kyazdani42/nvim-web-devicons',
   }
   use 'lambdalisue/gina.vim'
-  use {'neoclide/coc.nvim', branch = 'release'}
+  use {
+    'neoclide/coc.nvim',
+    branch = 'release',
+    requires = {
+      {'neoclide/coc-lists', run = 'yarn install --flozen-lockfile'},
+    },
+  }
   use {
     'notomo/gesture.nvim',
     config = function()
@@ -107,7 +113,16 @@ return require('packer').startup(function()
       }
     end,
   }
-  use {'nvim-telescope/telescope.nvim', requires = 'nvim-lua/plenary.nvim'}
+  use {
+    'nvim-telescope/telescope.nvim',
+    config = function()
+      require('telescope').load_extension('coc')
+    end,
+    requires = {
+      'fannheyward/telescope-coc.nvim',
+      'nvim-lua/plenary.nvim',
+    },
+  }
   use {
     'nvim-treesitter/nvim-treesitter',
     config = function()
