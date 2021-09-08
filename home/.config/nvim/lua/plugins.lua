@@ -78,6 +78,12 @@ return require('packer').startup(function()
     end,
     requires = {'kyazdani42/nvim-web-devicons', opt = true},
   }
+  use {
+    'lukas-reineke/indent-blankline.nvim',
+    config = function()
+      require('indent_blankline').setup {}
+    end,
+  }
   use 'junegunn/goyo.vim'
   use {
     'junegunn/limelight.vim',
