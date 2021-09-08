@@ -61,6 +61,7 @@ return require('packer').startup(function()
         t = {
           name = 'toggle',
           g = {'<Cmd>Goyo<CR>', 'Goyo'},
+          l = {'<Cmd>Limelight!!<CR>', 'Limelight'},
           t = {'<Cmd>NvimTreeToggle<CR>', 'NvimTree'},
         },
         w = {'<Cmd>w<CR>', 'write'},
@@ -77,6 +78,13 @@ return require('packer').startup(function()
     requires = {'kyazdani42/nvim-web-devicons', opt = true},
   }
   use 'junegunn/goyo.vim'
+  use {
+    'junegunn/limelight.vim',
+    config = function()
+      vim.api.nvim_set_keymap('n', '<Leader>l', '<Plug>(Limelight)', {})
+      vim.api.nvim_set_keymap('x', '<Leader>l', '<Plug>(Limelight)', {})
+    end,
+  }
   use {
     'kana/vim-textobj-user',
     requires = {
