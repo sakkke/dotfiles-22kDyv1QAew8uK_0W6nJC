@@ -60,6 +60,7 @@ return require('packer').startup(function()
         q = {'<Cmd>q<CR>', 'quit'},
         t = {
           name = 'toggle',
+          g = {'<Cmd>Goyo<CR>', 'Goyo'},
           t = {'<Cmd>NvimTreeToggle<CR>', 'NvimTree'},
         },
         w = {'<Cmd>w<CR>', 'write'},
@@ -75,6 +76,7 @@ return require('packer').startup(function()
     end,
     requires = {'kyazdani42/nvim-web-devicons', opt = true},
   }
+  use 'junegunn/goyo.vim'
   use {
     'kana/vim-textobj-user',
     requires = {
