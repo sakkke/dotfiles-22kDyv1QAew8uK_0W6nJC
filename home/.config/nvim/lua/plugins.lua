@@ -46,6 +46,7 @@ return require('packer').startup(function()
         g = {
           name = 'git',
           c = {'<Cmd>Gina --opener=tabnew commit<CR>', 'commit'},
+          l = {'<Cmd>Gina --opener=tabnew log<CR>', 'log'},
           s = {'<Cmd>Gina --opener=tabnew status -s<CR>', 'status'},
         },
         p = {
@@ -58,6 +59,7 @@ return require('packer').startup(function()
           y = {'<Cmd>PackerSync<CR>', 'Sync'},
         },
         q = {'<Cmd>q<CR>', 'quit'},
+        r = {'<Cmd>redraw!<CR>', 'redraw!'},
         t = {
           name = 'toggle',
           T = {'<Cmd>TransparentToggle<CR>', 'Transparent'},
@@ -66,6 +68,7 @@ return require('packer').startup(function()
           t = {'<Cmd>NvimTreeToggle<CR>', 'NvimTree'},
         },
         w = {'<Cmd>w<CR>', 'write'},
+        z = {'zz', 'zz'},
       }, {prefix = '<Leader>'})
     end,
   }
