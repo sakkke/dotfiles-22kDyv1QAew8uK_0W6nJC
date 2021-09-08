@@ -21,6 +21,7 @@ return require('packer').startup(function()
       require('which-key').setup {}
       local wk = require 'which-key'
       wk.register({
+        Q = {'<Cmd>qa!<CR>', 'quitall!'},
         [' '] = {
           name = 'Telescope',
           [' '] = {'<Cmd>Telescope<CR>', 'Telescope'},
@@ -38,6 +39,7 @@ return require('packer').startup(function()
           c = {'<Cmd>Gina --opener=tabnew commit<CR>', 'commit'},
           s = {'<Cmd>Gina --opener=tabnew status -s<CR>', 'status'},
         },
+        q = {'<Cmd>q<CR>', 'quit'},
         t = {
           name = 'toggle',
           t = {'<Cmd>NvimTreeToggle<CR>', 'NvimTree'},
