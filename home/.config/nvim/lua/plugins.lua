@@ -22,6 +22,7 @@ return require('packer').startup(function()
       local wk = require 'which-key'
       wk.register({
         Q = {'<Cmd>qa!<CR>', 'quitall!'},
+        W = {'<Cmd>wq<CR>', 'wq'},
         [' '] = {
           name = 'Telescope',
           [' '] = {'<Cmd>Telescope<CR>', 'Telescope'},
@@ -44,6 +45,7 @@ return require('packer').startup(function()
           name = 'toggle',
           t = {'<Cmd>NvimTreeToggle<CR>', 'NvimTree'},
         },
+        w = {'<Cmd>w<CR>', 'write'},
       }, {prefix = '<Leader>'})
     end,
   }
