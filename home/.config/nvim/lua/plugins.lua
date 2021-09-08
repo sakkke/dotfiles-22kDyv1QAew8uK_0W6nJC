@@ -26,11 +26,17 @@ return require('packer').startup(function()
           [' '] = {'<Cmd>Telescope<CR>', 'Telescope'},
           b = {'<Cmd>Telescope buffers<CR>', 'buffers'},
           c = {'<Cmd>Telescope command_history<CR>', 'command_history'},
+          r = {'<Cmd>Telescope registers<CR>', 'registers'},
           s = {'<Cmd>Telescope search_history<CR>', 'search_history'},
         },
         f = {
           name = 'focus',
           t = {'<Cmd>NvimTreeFocus<CR>', 'NvimTree'},
+        },
+        g = {
+          name = 'git',
+          c = {'<Cmd>Gina --opener=tabnew commit<CR>', 'commit'},
+          s = {'<Cmd>Gina --opener=tabnew status -s<CR>', 'status'},
         },
         t = {
           name = 'toggle',
