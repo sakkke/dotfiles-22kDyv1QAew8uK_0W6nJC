@@ -88,6 +88,7 @@ return require('packer').startup(function()
     requires = 'kyazdani42/nvim-web-devicons',
   }
   use 'lambdalisue/gina.vim'
+  use {'neoclide/coc.nvim', branch = 'release'}
   use {
     'notomo/gesture.nvim',
     config = function()
