@@ -9,6 +9,13 @@ export HISTFILE="$HOME/.zsh_history"
 export HISTSIZE=1000000
 export SAVEHIST=1000000
 
+function bootstrap_asdf {
+  local install_path="$HOME/.asdf"
+  if [ ! -d "$install_path" ]; then
+    git clone https://github.com/asdf-vm/asdf.git "$install_path"
+  fi
+}
+
 function bootstrap_zinit {
   local install_path="$HOME/.zinit/bin"
   if [ ! -d "$install_path" ]; then
@@ -16,7 +23,12 @@ function bootstrap_zinit {
   fi
 }
 
+bootstrap_asdf
 bootstrap_zinit
+
+. "$HOME/.asdf/asdf.sh"
+fpath=("$ASDF_DIR/completions" $fpath)
+autoload -Uz compinit && compinit
 
 source ~/.zinit/bin/zinit.zsh
 
