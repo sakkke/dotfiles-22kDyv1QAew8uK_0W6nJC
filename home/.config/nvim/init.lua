@@ -8,6 +8,7 @@ vim.o.number = true
 vim.o.relativenumber = true
 vim.o.showmode = false
 vim.o.termguicolors = true
+vim.o.whichwrap = vim.o.whichwrap..',h,l'
 vim.o.wrap = false
 vim.g.mapleader = ' '
 vim.cmd [[colorscheme nord]]
