@@ -28,6 +28,10 @@ return require('packer').startup(function()
           c = {'<Cmd>Telescope command_history<CR>', 'command_history'},
           s = {'<Cmd>Telescope search_history<CR>', 'search_history'},
         },
+        f = {
+          name = 'focus',
+          t = {'<Cmd>NvimTreeFocus<CR>', 'NvimTree'},
+        },
         t = {
           name = 'toggle',
           t = {'<Cmd>NvimTreeToggle<CR>', 'NvimTree'},
