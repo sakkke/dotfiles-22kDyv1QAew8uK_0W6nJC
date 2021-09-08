@@ -21,12 +21,12 @@ return require('packer').startup(function()
       require('which-key').setup {}
       local wk = require 'which-key'
       wk.register({
-        f = {
-          name = 'find',
+        [' '] = {
+          name = 'Telescope',
+          [' '] = {'<Cmd>Telescope<CR>', 'Telescope'},
           b = {'<Cmd>Telescope buffers<CR>', 'buffers'},
           c = {'<Cmd>Telescope command_history<CR>', 'command_history'},
           s = {'<Cmd>Telescope search_history<CR>', 'search_history'},
-          t = {'<Cmd>Telescope<CR>', 'Telescope'},
         },
         t = {
           name = 'toggle',
