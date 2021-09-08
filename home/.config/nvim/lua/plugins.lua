@@ -21,6 +21,13 @@ return require('packer').startup(function()
       require('which-key').setup {}
       local wk = require 'which-key'
       wk.register({
+        f = {
+          name = 'find',
+          b = {'<Cmd>Telescope buffers<CR>', 'buffers'},
+          c = {'<Cmd>Telescope command_history<CR>', 'command_history'},
+          s = {'<Cmd>Telescope search_history<CR>', 'search_history'},
+          t = {'<Cmd>Telescope<CR>', 'Telescope'},
+        },
         t = {
           name = 'toggle',
           t = {'<Cmd>NvimTreeToggle<CR>', 'NvimTree'},
@@ -60,6 +67,7 @@ return require('packer').startup(function()
       }
     end,
   }
+  use {'nvim-telescope/telescope.nvim', requires = 'nvim-lua/plenary.nvim'}
   use {
     'nvim-treesitter/nvim-treesitter',
     config = function()
