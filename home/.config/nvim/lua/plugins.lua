@@ -47,6 +47,15 @@ return require('packer').startup(function()
           c = {'<Cmd>Gina --opener=tabnew commit<CR>', 'commit'},
           s = {'<Cmd>Gina --opener=tabnew status -s<CR>', 'status'},
         },
+        p = {
+          name = 'Packer',
+          c = {'<Cmd>PackerClean<CR>', 'Clean'},
+          i = {'<Cmd>PackerInstall<CR>', 'Install'},
+          o = {'<Cmd>PackerCompile<CR>', 'Compile'},
+          s = {'<Cmd>PackerStatus<CR>', 'Status'},
+          u = {'<Cmd>PackerUpdate<CR>', 'Update'},
+          y = {'<Cmd>PackerSync<CR>', 'Sync'},
+        },
         q = {'<Cmd>q<CR>', 'quit'},
         t = {
           name = 'toggle',
