@@ -35,6 +35,7 @@ return require('packer').startup(function()
           [' '] = {'<Cmd>Telescope<CR>', 'Telescope'},
           b = {'<Cmd>Telescope buffers<CR>', 'buffers'},
           c = {'<Cmd>Telescope command_history<CR>', 'command_history'},
+          m = {'<Cmd>Telescope coc mru<CR>', 'mru'},
           r = {'<Cmd>Telescope registers<CR>', 'registers'},
           s = {'<Cmd>Telescope search_history<CR>', 'search_history'},
         },
