@@ -60,6 +60,7 @@ return require('packer').startup(function()
         q = {'<Cmd>q<CR>', 'quit'},
         t = {
           name = 'toggle',
+          T = {'<Cmd>TransparentToggle<CR>', 'Transparent'},
           g = {'<Cmd>Goyo<CR>', 'Goyo'},
           l = {'<Cmd>Limelight!!<CR>', 'Limelight'},
           t = {'<Cmd>NvimTreeToggle<CR>', 'NvimTree'},
@@ -83,6 +84,15 @@ return require('packer').startup(function()
     config = function()
       vim.api.nvim_set_keymap('n', '<Leader>l', '<Plug>(Limelight)', {})
       vim.api.nvim_set_keymap('x', '<Leader>l', '<Plug>(Limelight)', {})
+      function limelightWrapper(bool)
+        if vim.g.clear_background == 0 and bool then
+          vim.cmd [[Limelight]]
+        else
+          vim.cmd [[Limelight!]]
+        end
+      end
+      vim.cmd [[autocmd! User GoyoEnter call v:lua.limelightWrapper(v:true)]]
+      vim.cmd [[autocmd! User GoyoLeave call v:lua.limelightWrapper(v:false)]]
     end,
   }
   use {
