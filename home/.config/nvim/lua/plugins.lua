@@ -194,5 +194,19 @@ return require('packer').startup(function()
   }
   use {'tribela/vim-transparent', opt = true}
   use 'vim-jp/vimdoc-ja'
+  use {
+    'voldikss/vim-floaterm',
+    config = function()
+      vim.g.floaterm_keymap_first = ']]0'
+      vim.g.floaterm_keymap_hide = ']]d'
+      vim.g.floaterm_keymap_kill = ']]x'
+      vim.g.floaterm_keymap_last = ']]l'
+      vim.g.floaterm_keymap_new = ']]c'
+      vim.g.floaterm_keymap_next = ']]n'
+      vim.g.floaterm_keymap_prev = ']]p'
+      vim.g.floaterm_keymap_show = ']]a'
+      vim.g.floaterm_keymap_toggle = ']]t'
+    end,
+  }
   use {'windwp/nvim-autopairs', config = function() require('nvim-autopairs').setup {} end}
 end)
