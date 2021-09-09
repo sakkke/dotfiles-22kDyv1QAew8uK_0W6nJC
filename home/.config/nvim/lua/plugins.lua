@@ -193,5 +193,6 @@ return require('packer').startup(function()
     run = ':TSUpdate',
   }
   use {'tribela/vim-transparent', opt = true}
+  use 'vim-jp/vimdoc-ja'
   use {'windwp/nvim-autopairs', config = function() require('nvim-autopairs').setup {} end}
 end)
