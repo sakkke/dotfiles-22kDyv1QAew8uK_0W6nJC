@@ -20,7 +20,7 @@ return require('packer').startup(function()
     config = function () require('bufferline').setup {} end,
     requires = 'kyazdani42/nvim-web-devicons',
   }
-  use {'arcticicestudio/nord-vim', requires = {'tribela/vim-transparent'}}
+  use 'arcticicestudio/nord-vim'
   use 'editorconfig/editorconfig-vim'
   use {
     'folke/which-key.nvim',
@@ -62,7 +62,6 @@ return require('packer').startup(function()
         r = {'<Cmd>redraw!<CR>', 'redraw!'},
         t = {
           name = 'toggle',
-          T = {'<Cmd>TransparentToggle<CR>', 'Transparent'},
           g = {'<Cmd>Goyo<CR>', 'Goyo'},
           l = {'<Cmd>Limelight!!<CR>', 'Limelight'},
           t = {'<Cmd>NvimTreeToggle<CR>', 'NvimTree'},
@@ -109,7 +108,14 @@ return require('packer').startup(function()
       vim.api.nvim_set_keymap('n', '<Leader>l', '<Plug>(Limelight)', {})
       vim.api.nvim_set_keymap('x', '<Leader>l', '<Plug>(Limelight)', {})
       function limelightWrapper(bool)
-        if vim.g.clear_background == 0 and bool then
+        if (
+          (
+            vim.fn.exists('g:clear_background') and
+            vim.g.clear_background == 0
+          ) or
+          not vim.fn.exists('g:clear_background') and
+          bool
+        ) then
           vim.cmd [[Limelight]]
         else
           vim.cmd [[Limelight!]]
@@ -177,5 +183,6 @@ return require('packer').startup(function()
     end,
     run = ':TSUpdate',
   }
+  use {'tribela/vim-transparent', opt = true}
   use {'windwp/nvim-autopairs', config = function() require('nvim-autopairs').setup {} end}
 end)
