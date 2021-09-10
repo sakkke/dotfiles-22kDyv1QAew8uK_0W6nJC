@@ -23,6 +23,13 @@ return require('packer').startup(function()
   use 'arcticicestudio/nord-vim'
   use 'editorconfig/editorconfig-vim'
   use {
+    'folke/todo-comments.nvim',
+    config = function()
+      require('todo-comments').setup {}
+    end,
+    requires = 'nvim-lua/plenary.nvim',
+  }
+  use {
     'folke/which-key.nvim',
     config = function()
       require('which-key').setup {}
