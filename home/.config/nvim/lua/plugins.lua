@@ -80,36 +80,6 @@ return require('packer').startup(function()
     end,
     requires = {'kyazdani42/nvim-web-devicons', opt = true},
   }
-  use {
-    'lewis6991/gitsigns.nvim',
-    config = function()
-      require('gitsigns').setup()
-    end,
-    requires = {
-      'nvim-lua/plenary.nvim',
-    },
-  }
-  use {
-    'lukas-reineke/indent-blankline.nvim',
-    config = function()
-      vim.cmd [[
-        highlight IndentBlanklineIndent1 guifg=#bf616a blend=nocombine " nord11
-        highlight IndentBlanklineIndent2 guifg=#d08770 blend=nocombine " nord12
-        highlight IndentBlanklineIndent3 guifg=#ebcb8b blend=nocombine " nord13
-        highlight IndentBlanklineIndent4 guifg=#a3be8c blend=nocombine " nord14
-        highlight IndentBlanklineIndent5 guifg=#b48ead blend=nocombine " nord15
-      ]]
-      require('indent_blankline').setup {
-        char_highlight_list = {
-          'IndentBlanklineIndent1',
-          'IndentBlanklineIndent2',
-          'IndentBlanklineIndent3',
-          'IndentBlanklineIndent4',
-          'IndentBlanklineIndent5',
-        },
-      }
-    end,
-  }
   use 'junegunn/goyo.vim'
   use {
     'junegunn/limelight.vim',
@@ -148,6 +118,36 @@ return require('packer').startup(function()
     requires = 'kyazdani42/nvim-web-devicons',
   }
   use 'lambdalisue/gina.vim'
+  use {
+    'lewis6991/gitsigns.nvim',
+    config = function()
+      require('gitsigns').setup()
+    end,
+    requires = {
+      'nvim-lua/plenary.nvim',
+    },
+  }
+  use {
+    'lukas-reineke/indent-blankline.nvim',
+    config = function()
+      vim.cmd [[
+        highlight IndentBlanklineIndent1 guifg=#bf616a blend=nocombine " nord11
+        highlight IndentBlanklineIndent2 guifg=#d08770 blend=nocombine " nord12
+        highlight IndentBlanklineIndent3 guifg=#ebcb8b blend=nocombine " nord13
+        highlight IndentBlanklineIndent4 guifg=#a3be8c blend=nocombine " nord14
+        highlight IndentBlanklineIndent5 guifg=#b48ead blend=nocombine " nord15
+      ]]
+      require('indent_blankline').setup {
+        char_highlight_list = {
+          'IndentBlanklineIndent1',
+          'IndentBlanklineIndent2',
+          'IndentBlanklineIndent3',
+          'IndentBlanklineIndent4',
+          'IndentBlanklineIndent5',
+        },
+      }
+    end,
+  }
   use {
     'neoclide/coc.nvim',
     branch = 'release',
