@@ -94,8 +94,8 @@ return require('packer').startup(function()
   use {
     'junegunn/limelight.vim',
     config = function()
-      vim.api.nvim_set_keymap('n', '<Leader>l', '<Plug>(Limelight)', {})
-      vim.api.nvim_set_keymap('x', '<Leader>l', '<Plug>(Limelight)', {})
+      vim.api.nvim_set_keymap('n', '<Leader>pl', '<Plug>(Limelight)', {})
+      vim.api.nvim_set_keymap('x', '<Leader>pl', '<Plug>(Limelight)', {})
       function limelightWrapper(bool)
         if (
           (
