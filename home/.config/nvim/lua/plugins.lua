@@ -164,6 +164,14 @@ return require('packer').startup(function()
           'IndentBlanklineIndent4',
           'IndentBlanklineIndent5',
         },
+        filetype_exclude = {
+          'NvimTree',
+          'gesture',
+          'help',
+          'packer',
+          'startify',
+          'translator',
+        },
       }
     end,
   }
