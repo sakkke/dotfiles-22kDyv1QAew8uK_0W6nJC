@@ -114,7 +114,12 @@ return require('packer').startup(function()
       vim.cmd [[autocmd! User GoyoLeave call v:lua.limelightWrapper(v:false)]]
     end,
   }
-  use 'justinmk/vim-sneak'
+  use {
+    'justinmk/vim-sneak',
+    config = function()
+      vim.g['sneak#label'] = 1
+    end,
+  }
   use {
     'kana/vim-textobj-user',
     requires = {
