@@ -190,6 +190,13 @@ return require('packer').startup(function()
         highlight = {enable = true},
         rainbow = {
           enable = true,
+          colors = {
+            '#bf616a', -- nord11
+            '#d08770', -- nord12
+            '#ebcb8b', -- nord13
+            '#a3be8c', -- nord14
+            '#b48ead', -- nord15
+          },
         },
       }
     end,
