@@ -65,6 +65,9 @@ return require('packer').startup(function()
           l = {'<Cmd>Gina --opener=tabnew log<CR>', 'log'},
           s = {'<Cmd>Gina --opener=tabnew status -s<CR>', 'status'},
         },
+        p = {
+          name = 'plug',
+        },
         q = {'<Cmd>q<CR>', 'quit'},
         r = {'<Cmd>redraw!<CR>', 'redraw!'},
         t = {
@@ -236,6 +239,17 @@ return require('packer').startup(function()
       vim.g.floaterm_keymap_toggle = ']]t'
     end,
   }
-  use 'voldikss/vim-translator'
+  use {
+    'voldikss/vim-translator',
+    config = function()
+      vim.api.nvim_set_keymap('n', '<Leader>pr', '<Plug>TranslateR', {silent = true})
+      vim.api.nvim_set_keymap('n', '<Leader>pt', '<Plug>Translate', {silent = true})
+      vim.api.nvim_set_keymap('n', '<Leader>pw', '<Plug>TranslateW', {silent = true})
+      vim.api.nvim_set_keymap('n', '<Leader>px', '<Plug>TranslateX', {silent = true})
+      vim.api.nvim_set_keymap('v', '<Leader>pr', '<Plug>TranslateRV', {silent = true})
+      vim.api.nvim_set_keymap('v', '<Leader>pt', '<Plug>TranslateV', {silent = true})
+      vim.api.nvim_set_keymap('v', '<Leader>pw', '<Plug>TranslateWV', {silent = true})
+    end,
+  }
   use {'windwp/nvim-autopairs', config = function() require('nvim-autopairs').setup {} end}
 end)
