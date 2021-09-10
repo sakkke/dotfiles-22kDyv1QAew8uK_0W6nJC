@@ -188,8 +188,14 @@ return require('packer').startup(function()
     config = function()
       require('nvim-treesitter.configs').setup {
         highlight = {enable = true},
+        rainbow = {
+          enable = true,
+        },
       }
     end,
+    requires = {
+      'p00f/nvim-ts-rainbow',
+    },
     run = ':TSUpdate',
   }
   use {'tribela/vim-transparent', opt = true}
