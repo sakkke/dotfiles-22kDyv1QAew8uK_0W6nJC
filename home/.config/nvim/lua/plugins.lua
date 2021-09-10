@@ -118,6 +118,9 @@ return require('packer').startup(function()
     'justinmk/vim-sneak',
     config = function()
       vim.g['sneak#label'] = 1
+      local nord4 = '#d8dee9'
+      local nord11 = '#bf616a'
+      vim.cmd('highlight Sneak guibg='..nord11..' guifg='..nord4)
     end,
   }
   use {
