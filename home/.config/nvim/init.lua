@@ -36,6 +36,8 @@ vim.api.nvim_set_keymap('i', '<C-p>', '<Up>', {noremap = true})
 
 -- Remaps
 vim.api.nvim_set_keymap('n', '$', 'g$', {})
+vim.api.nvim_set_keymap('v', '<', '<gv', {noremap = true})
+vim.api.nvim_set_keymap('v', '>', '>gv', {noremap = true})
 
 -- Shortcuts
 vim.api.nvim_set_keymap('c', 'jj', '<C-c>', {noremap = true})
