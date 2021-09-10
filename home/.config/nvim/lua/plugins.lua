@@ -251,6 +251,7 @@ return require('packer').startup(function()
   use {
     'voldikss/vim-translator',
     config = function()
+      vim.g.translator_target_lang = 'ja'
       vim.api.nvim_set_keymap('n', '<Leader>pr', '<Plug>TranslateR', {silent = true})
       vim.api.nvim_set_keymap('n', '<Leader>pt', '<Plug>Translate', {silent = true})
       vim.api.nvim_set_keymap('n', '<Leader>pw', '<Plug>TranslateW', {silent = true})
