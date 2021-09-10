@@ -148,7 +148,13 @@ return require('packer').startup(function()
       }
     end,
   }
-  use 'mhinz/vim-startify'
+  use {
+    'mhinz/vim-startify',
+    config = function()
+      local version = vim.fn.system 'nvim -v | head -n1 | xargs echo -n'
+      vim.g.startify_custom_header = vim.fn['startify#pad']({version})
+    end,
+  }
   use {
     'neoclide/coc.nvim',
     branch = 'release',
