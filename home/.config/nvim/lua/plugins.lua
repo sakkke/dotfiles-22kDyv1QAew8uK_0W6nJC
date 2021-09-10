@@ -35,6 +35,15 @@ return require('packer').startup(function()
       require('which-key').setup {}
       local wk = require 'which-key'
       wk.register({
+        P = {
+          name = 'Packer',
+          c = {'<Cmd>PackerClean<CR>', 'Clean'},
+          i = {'<Cmd>PackerInstall<CR>', 'Install'},
+          o = {'<Cmd>PackerCompile<CR>', 'Compile'},
+          s = {'<Cmd>PackerStatus<CR>', 'Status'},
+          u = {'<Cmd>PackerUpdate<CR>', 'Update'},
+          y = {'<Cmd>PackerSync<CR>', 'Sync'},
+        },
         Q = {'<Cmd>qa!<CR>', 'quitall!'},
         W = {'<Cmd>wq<CR>', 'wq'},
         [' '] = {
@@ -55,15 +64,6 @@ return require('packer').startup(function()
           c = {'<Cmd>Gina --opener=tabnew commit<CR>', 'commit'},
           l = {'<Cmd>Gina --opener=tabnew log<CR>', 'log'},
           s = {'<Cmd>Gina --opener=tabnew status -s<CR>', 'status'},
-        },
-        p = {
-          name = 'Packer',
-          c = {'<Cmd>PackerClean<CR>', 'Clean'},
-          i = {'<Cmd>PackerInstall<CR>', 'Install'},
-          o = {'<Cmd>PackerCompile<CR>', 'Compile'},
-          s = {'<Cmd>PackerStatus<CR>', 'Status'},
-          u = {'<Cmd>PackerUpdate<CR>', 'Update'},
-          y = {'<Cmd>PackerSync<CR>', 'Sync'},
         },
         q = {'<Cmd>q<CR>', 'quit'},
         r = {'<Cmd>redraw!<CR>', 'redraw!'},
@@ -236,5 +236,6 @@ return require('packer').startup(function()
       vim.g.floaterm_keymap_toggle = ']]t'
     end,
   }
+  use 'voldikss/vim-translator'
   use {'windwp/nvim-autopairs', config = function() require('nvim-autopairs').setup {} end}
 end)
