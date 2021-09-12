@@ -44,6 +44,7 @@ source ~/.zinit/bin/zinit.zsh
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 
+zinit light greymd/tmux-xpanes
 zinit light olets/zsh-abbr
 zinit ice depth=1
 zinit light romkatv/powerlevel10k
