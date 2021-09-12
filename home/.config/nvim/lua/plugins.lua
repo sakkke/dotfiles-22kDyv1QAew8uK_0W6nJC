@@ -189,6 +189,28 @@ return require('packer').startup(function()
     requires = {
       {'neoclide/coc-lists', run = 'yarn install --flozen-lockfile'},
       {
+        'neoclide/coc-snippets',
+        config = function()
+          vim.api.nvim_set_keymap('x', '<Leader>px', '<Plug>(coc-convert-snippet)', {})
+          vim.api.nvim_set_keymap(
+            'i',
+            '<Tab>',
+            [[pumvisible() ? coc#_select_confirm() : coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" : CheckBackSpace() ? "\<Tab>" : coc#refresh()]],
+            {expr = true, silent = true}
+          )
+          vim.cmd [[
+            function! CheckBackSpace() abort
+              let col = col('.') - 1
+              return !col || getline('.')[col - 1]  =~# '\s'
+            endfunction
+          ]]
+          vim.g.coc_snippet_next = '<Tab>'
+          vim.g.coc_snippet_prev = '<S-Tab>'
+        end,
+        requires = {'honza/vim-snippets'},
+        run = 'yarn install --flozen-lockfile',
+      },
+      {
         'weirongxu/coc-calc',
         config = function()
           vim.api.nvim_set_keymap('n', '<Leader>pca', '<Plug>(coc-calc-result-append)', {})
