@@ -230,6 +230,12 @@ return require('packer').startup(function()
     },
   }
   use {
+    'norcalli/nvim-colorizer.lua',
+    config = function()
+      require('colorizer').setup()
+    end,
+  }
+  use {
     'notomo/gesture.nvim',
     config = function()
       vim.api.nvim_set_keymap('n', '<LeftDrag>', '<Cmd>lua require("gesture").draw()<CR>', {noremap = true, silent = true})
