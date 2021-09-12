@@ -188,6 +188,14 @@ return require('packer').startup(function()
     branch = 'release',
     requires = {
       {'neoclide/coc-lists', run = 'yarn install --flozen-lockfile'},
+      {
+        'weirongxu/coc-calc',
+        config = function()
+          vim.api.nvim_set_keymap('n', '<Leader>pca', '<Plug>(coc-calc-result-append)', {})
+          vim.api.nvim_set_keymap('n', '<Leader>pcr', '<Plug>(coc-calc-result-replace)', {})
+        end,
+        run = 'yarn install --flozen-lockfile',
+      },
     },
   }
   use {
