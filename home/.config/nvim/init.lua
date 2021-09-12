@@ -50,6 +50,10 @@ vim.api.nvim_set_keymap('n', 'K', 'gg', {noremap = true})
 vim.api.nvim_set_keymap('n', 'L', 'g$', {noremap = true})
 vim.api.nvim_set_keymap('n', 'U', '<C-r>', {noremap = true})
 vim.api.nvim_set_keymap('n', 'Y', 'y$', {noremap = true})
+vim.api.nvim_set_keymap('v', 'H', '^', {noremap = true})
+vim.api.nvim_set_keymap('v', 'J', 'G', {noremap = true})
+vim.api.nvim_set_keymap('v', 'K', 'gg', {noremap = true})
+vim.api.nvim_set_keymap('v', 'L', 'g$', {noremap = true})
 vim.api.nvim_set_keymap('v', 'v', '<Esc>', {noremap = true})
 
 require 'init_local'
