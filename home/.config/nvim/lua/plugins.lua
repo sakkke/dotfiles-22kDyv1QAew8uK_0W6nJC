@@ -82,6 +82,7 @@ return require('packer').startup(function()
       }, {prefix = '<Leader>'})
     end,
   }
+  use 'freitass/todo.txt-vim'
   use {
     'hoob3rt/lualine.nvim',
     config = function ()
@@ -300,5 +301,20 @@ return require('packer').startup(function()
       vim.api.nvim_set_keymap('v', '<Leader>ptw', '<Plug>TranslateWV', {silent = true})
     end,
   }
-  use {'windwp/nvim-autopairs', config = function() require('nvim-autopairs').setup {} end}
+  use {
+    'windwp/nvim-autopairs',
+    config = function()
+      local npairs = require('nvim-autopairs')
+      _G.MUtils= {}
+      MUtils.completion_confirm = function()
+        if vim.fn.pumvisible() ~= 0  then
+          return npairs.esc('<CR>')
+        else
+          return npairs.autopairs_cr()
+        end
+      end
+      vim.api.nvim_set_keymap('i', '<CR>', 'v:lua.MUtils.completion_confirm()', {expr = true , noremap = true})
+      npairs.setup {}
+    end,
+  }
 end)
