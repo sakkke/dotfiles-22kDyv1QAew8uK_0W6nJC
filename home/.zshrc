@@ -15,6 +15,8 @@ function enter-temp {
   nvim -c "cd $temp"
 }
 
+source ~/.aliases
+
 function bootstrap_asdf {
   local install_path="$HOME/.asdf"
   if [ ! -d "$install_path" ]; then
