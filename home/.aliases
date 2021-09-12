@@ -1,4 +1,6 @@
 # vim: ft=sh
+alias grep='grep --color=auto'
+  alias egrep='grep -E'
 alias ls='ls --color=auto'
   alias l=ls
   alias la='ls -a'
