@@ -3,6 +3,7 @@ cd "$(dirname "$0")"
 find home -type f |
   xargs -I% sh -c 'echo "%" | sed "s:^home/::"' |
   xargs -I% sh -c 'mkdir -pv "$HOME/$(dirname "%")" && ln -fsv "$PWD/home/%" "$HOME/%"'
+touch ~/.aliases.local
 touch ~/.config/nvim/lua/init_local.lua
 touch ~/.gitconfig.local
 touch ~/.zshrc.local

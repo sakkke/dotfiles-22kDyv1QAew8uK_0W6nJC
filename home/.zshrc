@@ -16,6 +16,7 @@ function enter-temp {
 }
 
 source ~/.aliases
+source ~/.aliases.local
 
 function bootstrap_asdf {
   local install_path="$HOME/.asdf"
