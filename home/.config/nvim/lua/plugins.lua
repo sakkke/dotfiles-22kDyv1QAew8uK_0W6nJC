@@ -54,6 +54,7 @@ return require('packer').startup(function()
           m = {'<Cmd>Telescope coc mru<CR>', 'mru'},
           r = {'<Cmd>Telescope registers<CR>', 'registers'},
           s = {'<Cmd>Telescope search_history<CR>', 'search_history'},
+          t = {'<Cmd>TodoTelescope<CR>', 'todo'},
         },
         f = {
           name = 'focus',
