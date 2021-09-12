@@ -178,6 +178,14 @@ return require('packer').startup(function()
     end,
   }
   use {
+    'mattn/emmet-vim',
+    config = function()
+      vim.g.user_emmet_install_global = 0
+      vim.cmd [[autocmd FileType html EmmetInstall]]
+    end,
+    ft = {'html'},
+  }
+  use {
     'mhinz/vim-startify',
     config = function()
       local version = vim.fn.system 'nvim -v | head -n1 | xargs echo -n'
