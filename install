@@ -6,4 +6,5 @@ find home -type f |
 touch ~/.aliases.local
 touch ~/.config/nvim/lua/init_local.lua
 touch ~/.gitconfig.local
+touch ~/.zaliases.local
 touch ~/.zshrc.local
