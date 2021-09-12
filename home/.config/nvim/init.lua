@@ -1,5 +1,6 @@
 require 'plugins'
 
+vim.o.clipboard = 'unnamedplus'
 vim.o.cursorcolumn = true
 vim.o.cursorline = true
 vim.o.hidden = true
