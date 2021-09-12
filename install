@@ -5,3 +5,4 @@ find home -type f |
   xargs -I% sh -c 'mkdir -pv "$HOME/$(dirname "%")" && ln -fsv "$PWD/home/%" "$HOME/%"'
 touch ~/.config/nvim/lua/init_local.lua
 touch ~/.gitconfig.local
+touch ~/.zshrc.local
