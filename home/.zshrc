@@ -9,6 +9,12 @@ export HISTFILE="$HOME/.zsh_history"
 export HISTSIZE=1000000
 export SAVEHIST=1000000
 
+function enter-temp {
+  temp="$(mktemp -d)"
+  trap "rm -fr '$temp'" EXIT
+  nvim -c "cd $temp"
+}
+
 function bootstrap_asdf {
   local install_path="$HOME/.asdf"
   if [ ! -d "$install_path" ]; then
