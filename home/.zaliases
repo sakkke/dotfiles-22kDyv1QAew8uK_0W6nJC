@@ -1,2 +1,8 @@
 # vim: ft=zsh
 zalias e=editor
+zalias egrep='grep -E'
+zalias l=ls
+zalias la='ls -a'
+zalias ll='ls -al'
+zalias nex='nvim -e'
+zalias nview='nvim -R'
