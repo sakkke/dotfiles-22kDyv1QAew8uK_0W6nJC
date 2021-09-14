@@ -84,6 +84,15 @@ return require('packer').startup(function()
   }
   use 'freitass/todo.txt-vim'
   use {
+    'gelguy/wilder.nvim',
+    config = function()
+      vim.fn['wilder#setup'] {
+        modes = {':', '/', '?'},
+      }
+    end,
+    run = ':UpdateRemotePlugins',
+  }
+  use {
     'hoob3rt/lualine.nvim',
     config = function ()
       require('lualine').setup {
