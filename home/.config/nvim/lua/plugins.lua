@@ -66,6 +66,13 @@ return require('packer').startup(function()
           l = {'<Cmd>Gina --opener=tabnew log<CR>', 'log'},
           s = {'<Cmd>Gina --opener=tabnew status -s<CR>', 'status'},
         },
+        i = {
+          name = 'inv',
+          N = {'<Cmd>set invrelativenumber<CR>', 'relativenumber'},
+          l = {'<Cmd>set invlist<CR>', 'list'},
+          n = {'<Cmd>set invnumber<CR>', 'number'},
+          p = {'<Cmd>set invpaste<CR>', 'paste'},
+        },
         p = {
           name = 'plug',
         },
