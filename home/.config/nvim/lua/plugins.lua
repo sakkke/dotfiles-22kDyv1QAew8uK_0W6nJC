@@ -72,6 +72,7 @@ return require('packer').startup(function()
           l = {'<Cmd>set invlist<CR>', 'list'},
           n = {'<Cmd>set invnumber<CR>', 'number'},
           p = {'<Cmd>set invpaste<CR>', 'paste'},
+          w = {'<Cmd>set invwrap<CR>', 'wrap'},
         },
         p = {
           name = 'plug',

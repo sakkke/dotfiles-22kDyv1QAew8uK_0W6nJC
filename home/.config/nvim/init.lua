@@ -15,7 +15,6 @@ vim.o.smartcase = true
 vim.o.termguicolors = true
 vim.o.virtualedit = 'onemore'
 vim.o.whichwrap = vim.o.whichwrap..',h,l'
-vim.o.wrap = false
 vim.g.mapleader = ' '
 vim.cmd [[colorscheme nord]]
 
@@ -26,16 +25,16 @@ vim.api.nvim_set_keymap('c', '<C-d>', '<Del>', {noremap = true})
 vim.api.nvim_set_keymap('c', '<C-e>', '<End>', {noremap = true})
 vim.api.nvim_set_keymap('c', '<C-f>', '<Right>', {noremap = true})
 vim.api.nvim_set_keymap('c', '<C-h>', '<BS>', {noremap = true})
-vim.api.nvim_set_keymap('c', '<C-n>', '<Down>', {noremap = true})
-vim.api.nvim_set_keymap('c', '<C-p>', '<Up>', {noremap = true})
+vim.api.nvim_set_keymap('c', '<C-n>', 'g<Down>', {noremap = true})
+vim.api.nvim_set_keymap('c', '<C-p>', 'g<Up>', {noremap = true})
 vim.api.nvim_set_keymap('i', '<C-a>', '<Home>', {noremap = true})
 vim.api.nvim_set_keymap('i', '<C-b>', '<Left>', {noremap = true})
 vim.api.nvim_set_keymap('i', '<C-d>', '<Del>', {noremap = true})
 vim.api.nvim_set_keymap('i', '<C-e>', '<End>', {noremap = true})
 vim.api.nvim_set_keymap('i', '<C-f>', '<Right>', {noremap = true})
 vim.api.nvim_set_keymap('i', '<C-h>', '<BS>', {noremap = true})
-vim.api.nvim_set_keymap('i', '<C-n>', '<Down>', {noremap = true})
-vim.api.nvim_set_keymap('i', '<C-p>', '<Up>', {noremap = true})
+vim.api.nvim_set_keymap('i', '<C-n>', '<C-o>g<Down>', {noremap = true})
+vim.api.nvim_set_keymap('i', '<C-p>', '<C-o>g<Up>', {noremap = true})
 
 -- Remaps
 vim.api.nvim_set_keymap('n', '$', 'g$', {})
@@ -52,6 +51,8 @@ vim.api.nvim_set_keymap('n', 'K', 'gg', {noremap = true})
 vim.api.nvim_set_keymap('n', 'L', 'g$', {noremap = true})
 vim.api.nvim_set_keymap('n', 'U', '<C-r>', {noremap = true})
 vim.api.nvim_set_keymap('n', 'Y', 'y$', {noremap = true})
+vim.api.nvim_set_keymap('n', 'j', 'gj', {noremap = true})
+vim.api.nvim_set_keymap('n', 'k', 'gk', {noremap = true})
 vim.api.nvim_set_keymap('v', 'H', '^', {noremap = true})
 vim.api.nvim_set_keymap('v', 'J', 'G', {noremap = true})
 vim.api.nvim_set_keymap('v', 'K', 'gg', {noremap = true})
