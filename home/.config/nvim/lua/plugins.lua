@@ -95,8 +95,14 @@ return require('packer').startup(function()
     'gelguy/wilder.nvim',
     config = function()
       vim.fn['wilder#setup'] {
+        accept_key = '<Down>',
         modes = {':', '/', '?'},
+        next_key = '<Tab>',
+        previous_key = '<S-Tab>',
+        reject_key = '<Up>',
       }
+      vim.cmd [[call wilder#set_option('pipeline', [wilder#branch(wilder#python_file_finder_pipeline({ 'dir_command': ['find', '.', '-type', 'd', '-printf', '%P\n'], 'file_command': ['find', '.', '-type', 'f', '-printf', '%P\n'], 'filters': ['fuzzy_filter', 'difflib_sorter'] }), wilder#cmdline_pipeline({ 'fuzzy': 1, 'language': 'python' }), wilder#python_search_pipeline({ 'engine': 're', 'pattern': wilder#python_fuzzy_pattern(), 'sorter': wilder#python_difflib_sorter() }))])]]
+      vim.cmd [[call wilder#set_option('renderer', wilder#popupmenu_renderer(wilder#popupmenu_border_theme({ 'border': 'rounded', 'highlighter': wilder#basic_highlighter(), 'highlights': { 'border': 'Normal' }, 'left': [' ', wilder#popupmenu_devicons()], 'right': [' ', wilder#popupmenu_scrollbar()] })))]]
     end,
     run = ':UpdateRemotePlugins',
   }
