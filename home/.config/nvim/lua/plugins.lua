@@ -211,6 +211,7 @@ return require('packer').startup(function()
   use {
     'mhinz/vim-startify',
     config = function()
+      vim.g.startify_change_to_dir = 0
       local version = vim.fn.system 'nvim -v | head -n1 | xargs echo -n'
       vim.g.startify_custom_header = vim.fn['startify#pad']({version})
     end,
