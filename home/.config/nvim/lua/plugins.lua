@@ -21,6 +21,12 @@ return require('packer').startup(function()
     requires = 'kyazdani42/nvim-web-devicons',
   }
   use 'arcticicestudio/nord-vim'
+  use {
+    'beauwilliams/focus.nvim',
+    config = function()
+      require('focus').setup()
+    end,
+  }
   use 'editorconfig/editorconfig-vim'
   use 'fidian/hexmode'
   use {
@@ -84,6 +90,7 @@ return require('packer').startup(function()
         r = {'<Cmd>redraw!<CR>', 'redraw!'},
         t = {
           name = 'toggle',
+          f = {'<Cmd>FocusToggle<CR>', 'Focus'},
           g = {'<Cmd>Goyo<CR>', 'Goyo'},
           h = {'<Cmd>Hexmode<CR>', 'Hexmode'},
           l = {'<Cmd>Limelight!!<CR>', 'Limelight'},
