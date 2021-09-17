@@ -210,6 +210,7 @@ return require('packer').startup(function()
     end,
     ft = {'html'},
   }
+  use 'mbbill/undotree'
   use {
     'mhinz/vim-startify',
     config = function()
