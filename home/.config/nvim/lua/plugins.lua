@@ -210,7 +210,19 @@ return require('packer').startup(function()
     end,
     ft = {'html'},
   }
-  use 'mbbill/undotree'
+  use {
+    'mbbill/undotree',
+    config = function()
+      if vim.fn.has('persistent_undo') then
+        local targetPath = vim.fn.expand('~/.undodir')
+        if not vim.fn.isdirectory(targetPath) then
+          vim.fn.mkdir(targetPath, 'p', tonumber('700', 8))
+        end
+        vim.o.undodir = targetPath
+        vim.o.undofile = true
+      end
+    end,
+  }
   use {
     'mhinz/vim-startify',
     config = function()
