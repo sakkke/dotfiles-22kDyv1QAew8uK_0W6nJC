@@ -22,6 +22,7 @@ return require('packer').startup(function()
   }
   use 'arcticicestudio/nord-vim'
   use 'editorconfig/editorconfig-vim'
+  use 'fidian/hexmode'
   use {
     'folke/todo-comments.nvim',
     config = function()
@@ -82,6 +83,7 @@ return require('packer').startup(function()
         t = {
           name = 'toggle',
           g = {'<Cmd>Goyo<CR>', 'Goyo'},
+          h = {'<Cmd>Hexmode<CR>', 'Hexmode'},
           l = {'<Cmd>Limelight!!<CR>', 'Limelight'},
           t = {'<Cmd>NvimTreeToggle<CR>', 'NvimTree'},
         },
