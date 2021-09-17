@@ -222,6 +222,8 @@ return require('packer').startup(function()
         vim.o.undodir = targetPath
         vim.o.undofile = true
       end
+      vim.g.undotree_HighlightChangedText = 0
+      vim.g.undotree_WindowLayout = 3
     end,
   }
   use {
