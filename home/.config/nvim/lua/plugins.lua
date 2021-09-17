@@ -86,6 +86,7 @@ return require('packer').startup(function()
           h = {'<Cmd>Hexmode<CR>', 'Hexmode'},
           l = {'<Cmd>Limelight!!<CR>', 'Limelight'},
           t = {'<Cmd>NvimTreeToggle<CR>', 'NvimTree'},
+          u = {'<Cmd>UndotreeToggle<CR>', 'Undotree'},
         },
         w = {'<Cmd>w<CR>', 'write'},
         z = {'zz', 'zz'},
