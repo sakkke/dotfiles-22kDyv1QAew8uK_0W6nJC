@@ -63,6 +63,7 @@ return require('packer').startup(function()
         },
         g = {
           name = 'git',
+          a = {'<Cmd>FloatermNew git add -p<CR>', 'add -p'},
           c = {'<Cmd>Gina --opener=tabnew commit<CR>', 'commit'},
           l = {'<Cmd>Gina --opener=tabnew log<CR>', 'log'},
           s = {'<Cmd>Gina --opener=tabnew status -s<CR>', 'status'},
