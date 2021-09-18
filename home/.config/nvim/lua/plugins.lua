@@ -396,3 +396,5 @@ return require('packer').startup(function()
     end,
   }
 end)
+
+-- vim: et sw=2

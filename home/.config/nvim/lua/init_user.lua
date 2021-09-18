@@ -64,3 +64,5 @@ vim.api.nvim_set_keymap('v', 'J', 'G', {noremap = true})
 vim.api.nvim_set_keymap('v', 'K', 'gg', {noremap = true})
 vim.api.nvim_set_keymap('v', 'L', 'g$', {noremap = true})
 vim.api.nvim_set_keymap('v', 'v', '<Esc>', {noremap = true})
+
+-- vim: et sw=2
