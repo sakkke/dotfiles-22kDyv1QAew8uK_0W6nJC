@@ -13,7 +13,7 @@ vim.cmd [[
   augroup end
 ]]
 
-return require('packer').startup(function()
+return require('packer').startup({function()
   use 'wbthomason/packer.nvim'
   use {
     'akinsho/bufferline.nvim',
@@ -445,6 +445,12 @@ return require('packer').startup(function()
       npairs.setup {}
     end,
   }
-end)
+end, config = {
+  display = {
+    open_fn = function()
+      return require('packer.util').float({border = 'single'})
+    end,
+  }
+}})
 
 -- vim: et sw=2
