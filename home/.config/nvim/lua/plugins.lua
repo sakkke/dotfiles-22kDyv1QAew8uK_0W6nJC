@@ -185,7 +185,12 @@ return require('packer').startup(function()
     'kyazdani42/nvim-tree.lua',
     requires = 'kyazdani42/nvim-web-devicons',
   }
-  use 'lambdalisue/edita.vim'
+  use {
+    'lambdalisue/edita.vim',
+    config = function()
+      vim.g['edita#opener'] = 'split'
+    end,
+  }
   use 'lambdalisue/gina.vim'
   use {
     'lewis6991/gitsigns.nvim',
