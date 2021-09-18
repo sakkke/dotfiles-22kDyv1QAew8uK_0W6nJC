@@ -132,6 +132,7 @@ return require('packer').startup(function()
   use {
     'hoob3rt/lualine.nvim',
     config = function ()
+      require('plenary.reload').reload_module('lualine', true)
       require('lualine').setup {
         options = {theme = 'nord'},
       }
