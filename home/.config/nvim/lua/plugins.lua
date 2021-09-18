@@ -95,6 +95,10 @@ return require('packer').startup(function()
           v = {'<C-w>v', '<C-w>v'},
           z = {'<Cmd>FocusMaximise<CR>', 'FocusMaximise'},
         },
+        c = {
+          name = 'cmd',
+          t = {'<Cmd>TortoiseTyping<CR>', 'TortoiseTyping'},
+        },
         f = {
           name = 'focus',
           t = {'<Cmd>NvimTreeFocus<CR>', 'NvimTree'},
