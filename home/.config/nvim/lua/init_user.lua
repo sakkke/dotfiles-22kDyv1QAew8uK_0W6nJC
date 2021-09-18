@@ -14,14 +14,14 @@ vim.o.ignorecase = true
 vim.o.list = true
 vim.o.listchars = 'eol:⏎,extends:»,nbsp:*,precedes:«,space:·,tab:»-,trail:-'
 vim.o.mouse = 'a'
-vim.o.nrformats = vim.o.nrformats..',alpha'
+vim.o.nrformats = 'bin,hex,alpha' -- vim.o.nrformats..',alpha'
 vim.o.number = true
 vim.o.relativenumber = true
 vim.o.showmode = false
 vim.o.smartcase = true
 vim.o.termguicolors = true
 vim.o.virtualedit = 'onemore'
-vim.o.whichwrap = vim.o.whichwrap..',h,l'
+vim.o.whichwrap = 'b,s,h,l' -- vim.o.whichwrap..',h,l'
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ','
 
