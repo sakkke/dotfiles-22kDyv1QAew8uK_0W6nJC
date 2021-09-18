@@ -1,6 +1,7 @@
 vim.cmd [[
   augroup user_config
     autocmd!
+    autocmd BufEnter * checktime
     autocmd BufWritePost init_user.lua source <afile>
   augroup end
 ]]
