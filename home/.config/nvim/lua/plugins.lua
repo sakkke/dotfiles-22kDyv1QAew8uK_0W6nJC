@@ -75,6 +75,7 @@ return require('packer').startup(function()
         },
         g = {
           name = 'git',
+          C = {'<Cmd>Gina --opener=tabnew commit --amend<CR>', 'commit --amend'},
           P = {'<Cmd>FloatermNew --autoclose=1 git pull<CR>', 'pull'},
           R = {'<Cmd>vsplit | terminal git rebase --continue<CR>', 'rebase --continue'},
           S = {'<Cmd>Gina --opener=tabnew status -s<CR>', 'Gina status'},
