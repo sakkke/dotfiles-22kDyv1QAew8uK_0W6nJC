@@ -63,6 +63,12 @@ return require('packer').startup(function()
           s = {'<Cmd>Telescope search_history<CR>', 'search_history'},
           t = {'<Cmd>TodoTelescope<CR>', 'todo'},
         },
+        [','] = {
+          name = 'config',
+          l = {'<Cmd>FocusSplitNicely ~/.config/nvim/lua/init_local.lua<CR>', 'local'},
+          p = {'<Cmd>FocusSplitNicely ~/.config/nvim/lua/plugins.lua<CR>', 'plugins'},
+          u = {'<Cmd>FocusSplitNicely ~/.config/nvim/lua/init_user.lua<CR>', 'user'},
+        },
         f = {
           name = 'focus',
           t = {'<Cmd>NvimTreeFocus<CR>', 'NvimTree'},
