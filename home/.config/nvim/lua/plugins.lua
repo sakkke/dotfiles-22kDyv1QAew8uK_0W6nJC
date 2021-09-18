@@ -395,6 +395,7 @@ return require('packer').startup(function()
       vim.g.choosewin_overlay_enable = 1
     end,
   }
+  use 'thanthese/Tortoise-Typing'
   use {'tribela/vim-transparent', opt = true}
   use 'vim-jp/vimdoc-ja'
   use {
