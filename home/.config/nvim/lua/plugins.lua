@@ -350,6 +350,13 @@ return require('packer').startup(function()
     },
     run = ':TSUpdate',
   }
+  use {
+    't9md/vim-choosewin',
+    config = function()
+      vim.api.nvim_set_keymap('n', '<Leader>pc', '<Plug>(choosewin)', {})
+      vim.g.choosewin_overlay_enable = 1
+    end,
+  }
   use {'tribela/vim-transparent', opt = true}
   use 'vim-jp/vimdoc-ja'
   use {
