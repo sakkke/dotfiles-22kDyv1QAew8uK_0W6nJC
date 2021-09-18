@@ -95,6 +95,11 @@ return require('packer').startup({function()
           v = {'<C-w>v', '<C-w>v'},
           z = {'<Cmd>FocusMaximise<CR>', 'FocusMaximise'},
         },
+        a = {
+          name = 'asynctasks.vim',
+          b = {'<Cmd>let g:floaterm_position_orig = g:floaterm_position | let g:floaterm_position = "bottomright" | execute "AsyncTask file-build" | let g:floaterm_position = g:floaterm_position_orig<CR>', 'file-build'},
+          r = {'<Cmd>let g:floaterm_height_orig = g:floaterm_height | let g:floaterm_width_orig = g:floaterm_width | let g:floaterm_height = 0.9 | let g:floaterm_width = 0.9 | execute "AsyncTask file-run" | let g:floaterm_height = g:floaterm_height_orig | let g:floaterm_width = g:floaterm_width_orig<CR>', 'file-run'},
+        },
         c = {
           name = 'cmd',
           t = {'<Cmd>TortoiseTyping<CR>', 'TortoiseTyping'},
@@ -394,7 +399,19 @@ return require('packer').startup({function()
   }
   use {
     'skywind3000/asynctasks.vim',
-    requires = 'skywind3000/asyncrun.vim',
+    config = function()
+      vim.g.asynctasks_extra_config = {'~/.config/nvim/tasks.ini'}
+      vim.g.asynctasks_term_pos = 'floaterm'
+    end,
+    requires = {
+      {
+        'skywind3000/asyncrun.vim',
+        config = function()
+          vim.g.asyncrun_rootmarks = {'.git', '.svn', '.root', '.project', '.hg'}
+        end,
+        requires = 'skywind3000/asyncrun.extra',
+      },
+    },
   }
   use {
     't9md/vim-choosewin',
