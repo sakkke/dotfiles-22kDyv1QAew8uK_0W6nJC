@@ -400,7 +400,7 @@ return require('packer').startup({function()
   use {
     'skywind3000/asynctasks.vim',
     config = function()
-      vim.g.asynctasks_extra_config = {'~/.config/nvim/tasks.ini'}
+      vim.g.asynctasks_extra_config = {'~/.config/nvim/tasks.ini', '~/.config/nvim/tasks_local.ini'}
       vim.g.asynctasks_term_pos = 'floaterm'
     end,
     requires = {
