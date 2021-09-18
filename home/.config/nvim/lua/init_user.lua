@@ -14,6 +14,7 @@ vim.o.ignorecase = true
 vim.o.list = true
 vim.o.listchars = 'eol:⏎,extends:»,nbsp:*,precedes:«,space:·,tab:»-,trail:-'
 vim.o.mouse = 'a'
+vim.o.nrformats = vim.o.nrformats..',alpha'
 vim.o.number = true
 vim.o.relativenumber = true
 vim.o.showmode = false
