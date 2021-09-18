@@ -393,6 +393,10 @@ return require('packer').startup({function()
     end,
   }
   use {
+    'skywind3000/asynctasks.vim',
+    requires = 'skywind3000/asyncrun.vim',
+  }
+  use {
     't9md/vim-choosewin',
     config = function()
       vim.api.nvim_set_keymap('n', '<Leader>pc', '<Plug>(choosewin)', {})
