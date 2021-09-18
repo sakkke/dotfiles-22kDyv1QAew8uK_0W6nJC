@@ -5,6 +5,7 @@ vim.cmd [[
   augroup end
 ]]
 
+vim.o.autoread = true
 vim.o.clipboard = 'unnamedplus'
 vim.o.cursorcolumn = true
 vim.o.cursorline = true
