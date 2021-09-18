@@ -121,6 +121,7 @@ return require('packer').startup(function()
         r = {'<Cmd>redraw!<CR>', 'redraw!'},
         t = {
           name = 'toggle',
+          T = {'<Cmd>TransparentToggle<CR>', 'Transparent'},
           f = {'<Cmd>FocusToggle<CR>', 'Focus'},
           g = {'<Cmd>Goyo<CR>', 'Goyo'},
           h = {'<Cmd>Hexmode<CR>', 'Hexmode'},
