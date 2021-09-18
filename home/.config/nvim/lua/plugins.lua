@@ -356,6 +356,12 @@ return require('packer').startup(function()
     run = ':TSUpdate',
   }
   use {
+    'simeji/winresizer',
+    config = function()
+      vim.g.winresizer_start_key = '<Leader>pr'
+    end,
+  }
+  use {
     't9md/vim-choosewin',
     config = function()
       vim.api.nvim_set_keymap('n', '<Leader>pc', '<Plug>(choosewin)', {})
