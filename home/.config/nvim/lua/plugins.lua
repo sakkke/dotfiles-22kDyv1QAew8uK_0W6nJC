@@ -52,6 +52,12 @@ return require('packer').startup(function()
           y = {'<Cmd>PackerSync<CR>', 'Sync'},
         },
         Q = {'<Cmd>qa!<CR>', 'quitall!'},
+        T = {
+          name = 'tab',
+          c = {'<Cmd>tabnew<CR>', 'new'},
+          n = {'<Cmd>tabnext<CR>', 'next'},
+          p = {'<Cmd>tabprevious<CR>', 'previous'},
+        },
         W = {'<Cmd>wq<CR>', 'wq'},
         [' '] = {
           name = 'Telescope',
