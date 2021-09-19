@@ -440,7 +440,7 @@ return require('packer').startup({function()
       vim.g.floaterm_keymap_prev = ']]p'
       vim.g.floaterm_keymap_show = ']]a'
       vim.g.floaterm_keymap_toggle = ']]t'
-      vim.api.nvim_set_keymap('x', '<Leader>cs', ':FloatermSend<CR>', {noremap = true})
+      vim.api.nvim_set_keymap('x', '<Leader>cs', ':FloatermSend<CR>', {noremap = true, silent = true})
     end,
   }
   use {
