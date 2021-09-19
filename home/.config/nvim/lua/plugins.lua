@@ -104,8 +104,10 @@ return require('packer').startup({function()
         c = {
           name = 'cmd',
           S = {'<Cmd>%FloatermSend<CR>', 'FloatermSend'},
+          a = {'<Cmd>sort<CR>', 'sort'},
           s = {'<Cmd>FloatermSend<CR>', 'FloatermSend'},
           t = {'<Cmd>TortoiseTyping<CR>', 'TortoiseTyping'},
+          z = {'<Cmd>sort!<CR>', 'sort!'},
         },
         f = {
           name = 'focus',

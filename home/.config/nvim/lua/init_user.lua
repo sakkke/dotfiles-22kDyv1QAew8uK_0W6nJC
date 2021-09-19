@@ -67,4 +67,8 @@ vim.api.nvim_set_keymap('v', 'K', 'gg', {noremap = true})
 vim.api.nvim_set_keymap('v', 'L', 'g$', {noremap = true})
 vim.api.nvim_set_keymap('v', 'v', '<Esc>', {noremap = true})
 
+-- new maps
+vim.api.nvim_set_keymap('x', '<Leader>ca', ':sort<CR>', {noremap = true})
+vim.api.nvim_set_keymap('x', '<Leader>cz', ':sort!<CR>', {noremap = true})
+
 -- vim: et sw=2
