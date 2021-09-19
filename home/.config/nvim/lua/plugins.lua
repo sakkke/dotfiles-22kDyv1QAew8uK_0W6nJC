@@ -103,6 +103,8 @@ return require('packer').startup({function()
         },
         c = {
           name = 'cmd',
+          S = {'<Cmd>%FloatermSend<CR>', 'FloatermSend'},
+          s = {'<Cmd>FloatermSend<CR>', 'FloatermSend'},
           t = {'<Cmd>TortoiseTyping<CR>', 'TortoiseTyping'},
         },
         f = {
@@ -436,6 +438,7 @@ return require('packer').startup({function()
       vim.g.floaterm_keymap_prev = ']]p'
       vim.g.floaterm_keymap_show = ']]a'
       vim.g.floaterm_keymap_toggle = ']]t'
+      vim.api.nvim_set_keymap('x', '<Leader>cs', ':FloatermSend<CR>', {noremap = true})
     end,
   }
   use {
