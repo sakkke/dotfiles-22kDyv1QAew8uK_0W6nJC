@@ -403,7 +403,7 @@ return require('packer').startup({function()
     run = ':TSUpdate',
   }
   use {
-    'sakkke/previm',
+    'sakkke/previm', -- previm/previm
     branch = 'support-katex',
     config = function()
       vim.g.previm_open_cmd = 'xdg-open'
@@ -427,7 +427,7 @@ return require('packer').startup({function()
         config = function()
           vim.g.asyncrun_rootmarks = {'.git', '.svn', '.root', '.project', '.hg'}
         end,
-        requires = 'sakkke/asyncrun.extra',
+        requires = 'sakkke/asyncrun.extra', -- skywind3000/asyncrun.extra
       },
     },
   }
