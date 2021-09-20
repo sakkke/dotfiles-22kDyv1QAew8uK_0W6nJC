@@ -268,6 +268,7 @@ return require('packer').startup({function()
         },
         filetype_exclude = {
           'NvimTree',
+          'floaterm',
           'gesture',
           'help',
           'packer',
