@@ -434,7 +434,7 @@ return require('packer').startup({function()
   use {
     't9md/vim-choosewin',
     config = function()
-      vim.api.nvim_set_keymap('n', '<Leader>pc', '<Plug>(choosewin)', {})
+      vim.api.nvim_set_keymap('n', '<Leader>pq', '<Plug>(choosewin)', {})
       vim.g.choosewin_overlay_enable = 1
     end,
   }
