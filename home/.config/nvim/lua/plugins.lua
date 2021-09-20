@@ -105,6 +105,12 @@ return require('packer').startup({function()
           name = 'cmd',
           S = {'<Cmd>%FloatermSend<CR>', 'FloatermSend'},
           a = {'<Cmd>sort<CR>', 'sort'},
+          p = {
+            name = 'previm',
+            o = {'<Cmd>PrevimOpen<CR>', 'open'},
+            r = {'<Cmd>PrevimRefresh<CR>', 'refresh'},
+            w = {'<Cmd>PrevimWipeCache<CR>', 'wipe cache'},
+          },
           s = {'<Cmd>FloatermSend<CR>', 'FloatermSend'},
           t = {'<Cmd>TortoiseTyping<CR>', 'TortoiseTyping'},
           z = {'<Cmd>sort!<CR>', 'sort!'},
@@ -395,6 +401,13 @@ return require('packer').startup({function()
       'p00f/nvim-ts-rainbow',
     },
     run = ':TSUpdate',
+  }
+  use {
+    'sakkke/previm',
+    branch = 'support-katex',
+    config = function()
+      vim.g.previm_open_cmd = 'xdg-open'
+    end,
   }
   use {
     'simeji/winresizer',
