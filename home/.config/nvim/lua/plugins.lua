@@ -16,6 +16,25 @@ vim.cmd [[
 return require('packer').startup({function()
   use 'wbthomason/packer.nvim'
   use {
+    'Pocco81/AutoSave.nvim',
+    config = function()
+      require('autosave').setup {
+        enabled = true,
+        execution_message = "AutoSave: saved at " .. vim.fn.strftime("%H:%M:%S"),
+        events = {"InsertLeave", "TextChanged"},
+        conditions = {
+          exists = true,
+          filetype_is_not = {},
+          modifiable = true,
+        },
+        write_all_buffers = false,
+        on_off_commands = false,
+        clean_command_line_interval = 0,
+        debounce_delay = 135
+      }
+    end,
+  }
+  use {
     'akinsho/bufferline.nvim',
     config = function () require('bufferline').setup {} end,
     requires = 'kyazdani42/nvim-web-devicons',
