@@ -448,7 +448,7 @@ return require('packer').startup({function()
         config = function()
           vim.g.asyncrun_rootmarks = {'.git', '.svn', '.root', '.project', '.hg'}
         end,
-        requires = 'sakkke/asyncrun.extra', -- skywind3000/asyncrun.extra
+        requires = 'skywind3000/asyncrun.extra',
       },
     },
   }
