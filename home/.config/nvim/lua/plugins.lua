@@ -425,7 +425,7 @@ return require('packer').startup({function()
   }
   use {
     'sakkke/previm', -- previm/previm
-    branch = 'support-katex',
+    branch = 'latest',
     config = function()
       vim.g.previm_open_cmd = 'xdg-open'
     end,
