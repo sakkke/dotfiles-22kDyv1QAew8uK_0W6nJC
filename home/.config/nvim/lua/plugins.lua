@@ -16,7 +16,8 @@ vim.cmd [[
 return require('packer').startup({function()
   use 'wbthomason/packer.nvim'
   use {
-    'Pocco81/AutoSave.nvim',
+    'sakkke/AutoSave.nvim', -- Pocco81/AutoSave.nvim
+    branch = 'add-filename-is-not',
     config = function()
       require('autosave').setup {
         enabled = true,
@@ -24,6 +25,7 @@ return require('packer').startup({function()
         events = {"InsertLeave", "TextChanged"},
         conditions = {
           exists = true,
+          filename_is_not = {'init_user.lua', 'plugins.lua'},
           filetype_is_not = {},
           modifiable = true,
         },
