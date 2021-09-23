@@ -149,7 +149,7 @@ return require('packer').startup({function()
           S = {'<Cmd>Gina --opener=vsplit status -s<CR>', 'Gina status'},
           a = {'<Cmd>FloatermNew --height=0.9 --width=0.9 git add -p<CR>', 'add -p'},
           c = {'<Cmd>Gina --opener=vsplit commit<CR>', 'commit'},
-          l = {'<Cmd>Gina --opener=vsplit log<CR>', 'log'},
+          l = {'<Cmd>Gina --opener=vsplit log --graph<CR>', 'log'},
           p = {'<Cmd>FloatermNew --autoclose=1 git push<CR>', 'push'},
           r = {'<Cmd>vsplit | terminal git rebase -i<CR>', 'rebase -i'},
           s = {'<Cmd>FloatermNew git status<CR>', 'status'},
