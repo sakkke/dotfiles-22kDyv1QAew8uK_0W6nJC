@@ -322,6 +322,10 @@ return require('packer').startup({function()
     end,
   }
   use {
+    'mg979/vim-visual-multi',
+    branch = 'master',
+  }
+  use {
     'mhinz/vim-startify',
     config = function()
       vim.g.startify_change_to_dir = 0
