@@ -55,6 +55,7 @@ vim.api.nvim_set_keymap('v', '>', '>gv', {noremap = true})
 -- Shortcuts
 vim.api.nvim_set_keymap('c', 'jj', '<C-c>', {noremap = true})
 vim.api.nvim_set_keymap('i', 'jj', '<Esc>', {noremap = true})
+vim.api.nvim_set_keymap('n', '//', '<Cmd>noh<CR>', {noremap = true})
 vim.api.nvim_set_keymap('n', '<CR>', ':', {noremap = true})
 vim.api.nvim_set_keymap('n', 'H', '^', {noremap = true})
 vim.api.nvim_set_keymap('n', 'J', 'G', {noremap = true})
