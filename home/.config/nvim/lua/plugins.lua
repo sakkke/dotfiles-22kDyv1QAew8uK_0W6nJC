@@ -399,8 +399,9 @@ return require('packer').startup({function()
   use {
     'notomo/gesture.nvim',
     config = function()
-      vim.api.nvim_set_keymap('n', '<LeftDrag>', '<Cmd>lua require("gesture").draw()<CR>', {noremap = true, silent = true})
-      vim.api.nvim_set_keymap('n', '<LeftRelease>', '<Cmd>lua require("gesture").finish()<CR>', {noremap = true, silent = true})
+      vim.api.nvim_set_keymap('n', '<RightMouse>', '<Nop>', {noremap = true})
+      vim.api.nvim_set_keymap('n', '<RightDrag>', '<Cmd>lua require("gesture").draw()<CR>', {noremap = true, silent = true})
+      vim.api.nvim_set_keymap('n', '<RightRelease>', '<Cmd>lua require("gesture").finish()<CR>', {noremap = true, silent = true})
       local gesture = require 'gesture'
       gesture.register {
         name = 'Gina commit',
