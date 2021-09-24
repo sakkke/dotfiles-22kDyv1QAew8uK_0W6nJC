@@ -16,6 +16,57 @@ vim.cmd [[
 return require('packer').startup({function()
   use 'wbthomason/packer.nvim'
   use {
+    'MunifTanjim/nui.nvim',
+    config = function()
+      function webSearch()
+        local Input = require("nui.input")
+        local event = require("nui.utils.autocmd").event
+
+        local input = Input({
+          position = 0,
+          size = {
+              width = 20,
+              height = 2,
+          },
+          relative = "cursor",
+          border = {
+            highlight = "MyHighlightGroup",
+            style = "single",
+            text = {
+                top = "WebSearch",
+                top_align = "center",
+            },
+          },
+          win_options = {
+            winblend = 10,
+            winhighlight = "Normal:Normal",
+          },
+        }, {
+          prompt = "> ",
+          default_value = "",
+          on_close = function()
+            print("Input closed!")
+          end,
+          on_submit = function(value)
+            vim.fn.system {'xdg-open', 'https://duckduckgo.com/?q=' .. value}
+          end,
+        })
+
+        -- mount/open the component
+        input:mount()
+
+        -- unmount component when cursor leaves buffer
+        input:on(event.BufLeave, function()
+          input:unmount()
+        end)
+      end
+
+      vim.cmd [[command! WebSearch lua webSearch()]]
+
+      vim.api.nvim_set_keymap('n', '<Leader>cw', '<Cmd>WebSearch<CR>', {noremap = true, silent = true})
+    end,
+  }
+  use {
     'Pocco81/AutoSave.nvim',
     config = function()
       require('autosave').setup {
