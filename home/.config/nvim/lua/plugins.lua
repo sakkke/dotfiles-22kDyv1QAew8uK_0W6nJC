@@ -16,8 +16,7 @@ vim.cmd [[
 return require('packer').startup({function()
   use 'wbthomason/packer.nvim'
   use {
-    'sakkke/AutoSave.nvim', -- Pocco81/AutoSave.nvim
-    branch = 'add-filename-is-not',
+    'Pocco81/AutoSave.nvim',
     config = function()
       require('autosave').setup {
         enabled = true,
