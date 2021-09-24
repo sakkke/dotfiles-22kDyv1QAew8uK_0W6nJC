@@ -83,6 +83,7 @@ return require('packer').startup({function()
         [' '] = {
           name = 'Telescope',
           G = {'<Cmd>Telescope grep_string<CR>', 'grep_string'},
+          T = {'<Cmd>TodoTelescope<CR>', 'todo'},
           [' '] = {'<Cmd>Telescope<CR>', 'Telescope'},
           b = {'<Cmd>Telescope buffers<CR>', 'buffers'},
           c = {'<Cmd>Telescope command_history<CR>', 'command_history'},
@@ -98,7 +99,7 @@ return require('packer').startup({function()
           m = {'<Cmd>Telescope coc mru<CR>', 'mru'},
           r = {'<Cmd>Telescope registers<CR>', 'registers'},
           s = {'<Cmd>Telescope search_history<CR>', 'search_history'},
-          t = {'<Cmd>TodoTelescope<CR>', 'todo'},
+          t = {'<Cmd>Telescope treesitter<CR>', 'treesitter'},
         },
         [','] = {
           name = 'config',
