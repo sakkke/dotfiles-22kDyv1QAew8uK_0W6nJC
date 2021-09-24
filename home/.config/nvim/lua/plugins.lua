@@ -182,6 +182,7 @@ return require('packer').startup({function()
           b = {'<Cmd>let g:floaterm_position_orig = g:floaterm_position | let g:floaterm_position = "bottomright" | execute "AsyncTask file-build" | let g:floaterm_position = g:floaterm_position_orig<CR>', 'file-build'},
           e = {'<Cmd>let g:floaterm_wintype_orig = g:floaterm_wintype | let g:floaterm_wintype = "split" | execute "AsyncTask repl" | let g:floaterm_wintype = g:floaterm_wintype_orig<CR>', 'repl'},
           r = {'<Cmd>let g:floaterm_height_orig = g:floaterm_height | let g:floaterm_width_orig = g:floaterm_width | let g:floaterm_height = 0.9 | let g:floaterm_width = 0.9 | execute "AsyncTask file-run" | let g:floaterm_height = g:floaterm_height_orig | let g:floaterm_width = g:floaterm_width_orig<CR>', 'file-run'},
+          t = {'<Cmd>let g:floaterm_position_orig = g:floaterm_position | let g:floaterm_position = "bottomright" | execute "AsyncTask test" | let g:floaterm_position = g:floaterm_position_orig<CR>', 'test'},
         },
         c = {
           name = 'cmd',
