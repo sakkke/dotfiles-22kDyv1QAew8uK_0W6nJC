@@ -501,6 +501,10 @@ return require('packer').startup({function()
     run = ':TSUpdate',
   }
   use {
+    'plasticboy/vim-markdown',
+    requires = 'godlygeek/tabular',
+  }
+  use {
     'sakkke/previm', -- previm/previm
     branch = 'latest',
     config = function()
