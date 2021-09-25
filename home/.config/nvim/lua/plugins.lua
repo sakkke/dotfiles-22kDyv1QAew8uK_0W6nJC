@@ -132,11 +132,13 @@ return require('packer').startup({function()
         W = {'<Cmd>wq<CR>', 'wq'},
         [' '] = {
           name = 'Telescope',
+          F = {'<Cmd>Telescope file_browser<CR>', 'file_browser'},
           G = {'<Cmd>Telescope grep_string<CR>', 'grep_string'},
           T = {'<Cmd>TodoTelescope<CR>', 'todo'},
           [' '] = {'<Cmd>Telescope<CR>', 'Telescope'},
           b = {'<Cmd>Telescope buffers<CR>', 'buffers'},
           c = {'<Cmd>Telescope command_history<CR>', 'command_history'},
+          f = {'<Cmd>Telescope find_files<CR>', 'find_files'},
           g = {
             name = 'git',
             C = {'<Cmd>Telescope git_bcommits<CR>', 'bcommits'},
