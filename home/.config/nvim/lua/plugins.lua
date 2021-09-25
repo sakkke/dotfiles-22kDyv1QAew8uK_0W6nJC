@@ -186,8 +186,10 @@ return require('packer').startup({function()
         },
         c = {
           name = 'cmd',
+          E = {'<Cmd>EvalBlock!<CR>', 'EvalBlock!'},
           S = {'<Cmd>%FloatermSend<CR>', 'FloatermSend'},
           a = {'<Cmd>sort<CR>', 'sort'},
+          e = {'<Cmd>EvalBlock<CR>', 'EvalBlock'},
           p = {
             name = 'previm',
             o = {'<Cmd>PrevimOpen<CR>', 'open'},
@@ -267,6 +269,12 @@ return require('packer').startup({function()
       vim.cmd [[call wilder#set_option('renderer', wilder#popupmenu_renderer(wilder#popupmenu_border_theme({ 'border': 'rounded', 'highlighter': wilder#basic_highlighter(), 'highlights': { 'border': 'Normal' }, 'left': [' ', wilder#popupmenu_devicons()], 'right': [' ', wilder#popupmenu_scrollbar()] })))]]
     end,
     run = ':UpdateRemotePlugins',
+  }
+  use {
+    'gpanders/vim-medieval',
+    config = function()
+      vim.g.medieval_langs = {'bash', 'javascript=node', 'python', 'sh'}
+    end,
   }
   use {
     'hoob3rt/lualine.nvim',
