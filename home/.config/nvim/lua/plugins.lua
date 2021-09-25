@@ -189,6 +189,7 @@ return require('packer').startup({function()
           E = {'<Cmd>EvalBlock!<CR>', 'EvalBlock!'},
           S = {'<Cmd>%FloatermSend<CR>', 'FloatermSend'},
           a = {'<Cmd>sort<CR>', 'sort'},
+          c = {'<Cmd>Calendar<CR>', 'Calendar'},
           e = {'<Cmd>EvalBlock<CR>', 'EvalBlock'},
           p = {
             name = 'previm',
@@ -286,6 +287,7 @@ return require('packer').startup({function()
     end,
     requires = {'kyazdani42/nvim-web-devicons', opt = true},
   }
+  use 'itchyny/calendar.vim'
   use 'junegunn/goyo.vim'
   use {
     'junegunn/limelight.vim',
@@ -368,6 +370,7 @@ return require('packer').startup({function()
         },
         filetype_exclude = {
           'NvimTree',
+          'calendar',
           'floaterm',
           'gesture',
           'help',
