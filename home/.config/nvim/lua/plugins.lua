@@ -244,8 +244,8 @@ return require('packer').startup({function()
         t = {
           name = 'toggle',
           L = {'<Cmd>lua toggleTranslatorLang()<CR>', 'TranslatorLang'},
-          a = {'<Cmd>ASToggle<CR>', 'AutoSave'},
           T = {'<Cmd>TransparentToggle<CR>', 'Transparent'},
+          a = {'<Cmd>ASToggle<CR>', 'AutoSave'},
           f = {'<Cmd>FocusToggle<CR>', 'Focus'},
           g = {'<Cmd>Goyo<CR>', 'Goyo'},
           h = {'<Cmd>Hexmode<CR>', 'Hexmode'},
