@@ -243,6 +243,7 @@ return require('packer').startup({function()
         r = {'<Cmd>redraw!<CR>', 'redraw!'},
         t = {
           name = 'toggle',
+          L = {'<Cmd>lua toggleTranslatorLang()<CR>', 'TranslatorLang'},
           a = {'<Cmd>ASToggle<CR>', 'AutoSave'},
           T = {'<Cmd>TransparentToggle<CR>', 'Transparent'},
           f = {'<Cmd>FocusToggle<CR>', 'Focus'},
@@ -583,6 +584,9 @@ return require('packer').startup({function()
       vim.api.nvim_set_keymap('v', '<Leader>ptr', '<Plug>TranslateRV', {silent = true})
       vim.api.nvim_set_keymap('v', '<Leader>ptt', '<Plug>TranslateV', {silent = true})
       vim.api.nvim_set_keymap('v', '<Leader>ptw', '<Plug>TranslateWV', {silent = true})
+      function toggleTranslatorLang()
+        vim.g.translator_source_lang, vim.g.translator_target_lang = vim.g.translator_target_lang, vim.g.translator_source_lang
+      end
     end,
   }
   use {
