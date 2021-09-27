@@ -29,7 +29,7 @@ vim.o.whichwrap = 'b,s,h,l' -- vim.o.whichwrap..',h,l'
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ','
 
--- Emack like
+-- Emacs like
 vim.api.nvim_set_keymap('c', '<C-a>', '<Home>', {noremap = true})
 vim.api.nvim_set_keymap('c', '<C-b>', '<Left>', {noremap = true})
 vim.api.nvim_set_keymap('c', '<C-d>', '<Del>', {noremap = true})
