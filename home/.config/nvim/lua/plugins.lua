@@ -148,6 +148,7 @@ return require('packer').startup({function()
             h = {'<Cmd>Telescope git_stash<CR>', 'stash'},
             s = {'<Cmd>Telescope git_status<CR>', 'status'},
           },
+          l = {'<Cmd>Telescope live_grep<CR>', 'live_grep'},
           m = {'<Cmd>Telescope coc mru<CR>', 'mru'},
           r = {'<Cmd>Telescope registers<CR>', 'registers'},
           s = {'<Cmd>Telescope search_history<CR>', 'search_history'},
