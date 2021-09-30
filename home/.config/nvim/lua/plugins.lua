@@ -221,7 +221,7 @@ return require('packer').startup({function()
             c = {'<Cmd>FloatermNew git stash clear<CR>', 'clear'},
             h = {'<Cmd>FloatermNew git stash<CR>', '(no args)'},
             l = {'<Cmd>FloatermNew git stash list<CR>', 'list'},
-            p = {'<Cmd>FloatermNew git stash pop stash@{0}', 'pop stash@{0}'},
+            p = {'<Cmd>FloatermNew git stash pop stash@{0}<CR>', 'pop stash@{0}'},
           },
           l = {'<Cmd>Gina --opener=vsplit log --graph<CR>', 'log'},
           p = {'<Cmd>FloatermNew --autoclose=1 git push<CR>', 'push'},
