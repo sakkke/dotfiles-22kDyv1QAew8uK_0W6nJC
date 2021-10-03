@@ -24,10 +24,39 @@
 #
 # Online reference: https://github.com/SirVer/ultisnips/blob/master/doc/UltiSnips.txt
 
+snippet Evalblock "Evalblock" b
+<!-- require: ${1:sympy} target: ${2:foo} -->
+\`\`\`${3:python}
+${4:print('hello, world')}
+\`\`\`
+
+<!-- name: $2 -->
+\`\`\`${5:katex}
+\`\`\`$0
+endsnippet
+
 snippet block "block"
 <span style="display: block; padding: 1em; width: max-content;">
 $1
 </span>$0
+endsnippet
+
+snippet evalblock "evalblock" b
+<!-- target: ${1:foo} -->
+\`\`\`${2:python}
+${3:print('hello, world')}
+\`\`\`
+
+<!-- name: $1 -->
+\`\`\`${4:katex}
+\`\`\`$0
+endsnippet
+
+snippet evalblk "evalblk" b
+<!-- name: ${1:sympy} -->
+\`\`\`${2:python}
+${3:from sympy import *}
+\`\`\`$0
 endsnippet
 
 snippet math "math"
