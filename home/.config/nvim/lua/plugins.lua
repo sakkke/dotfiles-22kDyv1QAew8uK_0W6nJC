@@ -278,7 +278,7 @@ return require('packer').startup({function()
   use {
     'gpanders/vim-medieval',
     config = function()
-      vim.g.medieval_langs = {'bash', 'javascript=node', 'python', 'sh'}
+      vim.g.medieval_langs = {'bash', 'c=file-run-c', 'javascript=node', 'python', 'sh'}
     end,
   }
   use {
