@@ -205,6 +205,7 @@ return require('packer').startup({function()
           t = {'<Cmd>TortoiseTyping<CR>', 'TortoiseTyping'},
           z = {'<Cmd>sort!<CR>', 'sort!'},
         },
+        e = {'<Cmd>e!<CR>', 'edit!'},
         f = {
           name = 'focus',
           t = {'<Cmd>NvimTreeFocus<CR>', 'NvimTree'},
