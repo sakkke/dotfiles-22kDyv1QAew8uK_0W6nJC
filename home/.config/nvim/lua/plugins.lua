@@ -575,6 +575,7 @@ return require('packer').startup({function()
     end,
   }
   use 'thanthese/Tortoise-Typing'
+  use 'tpope/vim-sleuth'
   use {'tribela/vim-transparent', opt = true}
   use 'vim-jp/vimdoc-ja'
   use {
