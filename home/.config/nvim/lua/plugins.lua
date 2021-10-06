@@ -442,7 +442,7 @@ return require('packer').startup({function()
             'i',
             '<Tab>',
             [[pumvisible() ? coc#_select_confirm() : coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" : CheckBackSpace() ? "\<Tab>" : coc#refresh()]],
-            {expr = true, silent = true}
+            {expr = true, noremap = true, silent = true}
           )
           vim.cmd [[
             function! CheckBackSpace() abort
