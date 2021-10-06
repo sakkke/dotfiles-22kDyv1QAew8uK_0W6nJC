@@ -99,6 +99,7 @@ return require('packer').startup({function()
     end,
   }
   use 'editorconfig/editorconfig-vim'
+  use 'embear/vim-localvimrc'
   use 'fidian/hexmode'
   use {
     'folke/todo-comments.nvim',
