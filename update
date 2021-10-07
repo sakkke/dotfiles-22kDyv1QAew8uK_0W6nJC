@@ -1,0 +1,4 @@
+#!/bin/bash
+cd "$(dirname "$0")"
+git pull
+nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
