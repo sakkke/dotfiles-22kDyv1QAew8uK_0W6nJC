@@ -6,4 +6,5 @@ zalias la='ls -a'
 zalias ll='ls -al'
 zalias nex='nvim -e'
 zalias nview='nvim -R'
+zalias t=tmux
 zalias zexec='exec -l zsh'
