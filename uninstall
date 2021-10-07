@@ -3,3 +3,5 @@ cd "$(dirname "$0")"
 find home -type f |
   xargs -I% sh -c 'echo "%" | sed "s:^home/::"' |
   xargs -I% sh -c 'rm -v "$HOME/%"'
+rm -v ~/.config/nvim/plugin/packer_compiled.lua
+rm -vfr ~/.local/share/nvim/site/pack/packer
