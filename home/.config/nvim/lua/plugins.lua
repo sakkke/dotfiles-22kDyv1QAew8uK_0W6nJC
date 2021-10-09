@@ -28,7 +28,11 @@ function previmConfig()
   }
 
   vim.g.previm_disable_default_css = 1
-  vim.g.previm_open_cmd = 'xdg-open'
+  if inTermux() then
+    vim.g.previm_open_cmd = 'am start --activity-clear-task com.android.chrome/org.chromium.chrome.browser.ChromeTabbedActivity -d'
+  else
+    vim.g.previm_open_cmd = 'xdg-open'
+  end
   vim.g.previm_show_header = 0
 end
 
