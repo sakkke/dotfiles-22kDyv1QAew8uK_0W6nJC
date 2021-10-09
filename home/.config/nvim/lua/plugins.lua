@@ -13,6 +13,25 @@ vim.cmd [[
   augroup end
 ]]
 
+function inTermux()
+  return vim.fn.exists('termux-setup-storage')
+end
+
+function previmConfig()
+  -- ref: https://milligram.io/#getting-started
+  vim.g.previm_custom_css_paths = {
+    'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/stackoverflow-light.min.css',
+    'https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic',
+    'https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css',
+    'https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css',
+    '~/.config/nvim/previm-custom.css',
+  }
+
+  vim.g.previm_disable_default_css = 1
+  vim.g.previm_open_cmd = 'xdg-open'
+  vim.g.previm_show_header = 0
+end
+
 return require('packer').startup({function()
   use 'wbthomason/packer.nvim'
   use {
@@ -540,20 +559,15 @@ return require('packer').startup({function()
   use {
     'sakkke/previm', -- previm/previm
     branch = 'latest',
-    config = function()
-      -- ref: https://milligram.io/#getting-started
-      vim.g.previm_custom_css_paths = {
-        'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/stackoverflow-light.min.css',
-        'https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic',
-        'https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css',
-        'https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css',
-        '~/.config/nvim/previm-custom.css',
-      }
-
-      vim.g.previm_disable_default_css = 1
-      vim.g.previm_open_cmd = 'xdg-open'
-      vim.g.previm_show_header = 0
-    end,
+    config = previmConfig,
+    disable = inTermux(),
+  }
+  use {
+    '/sdcard/previm',
+    as = 'previm-in-termux',
+    branch = 'latest',
+    config = previmConfig,
+    disable = not (inTermux() and vim.fn.isdirectory('/sdcard/previm')),
   }
   use {
     'simeji/winresizer',
