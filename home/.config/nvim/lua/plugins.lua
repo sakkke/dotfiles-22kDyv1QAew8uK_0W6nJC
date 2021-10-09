@@ -14,7 +14,7 @@ vim.cmd [[
 ]]
 
 function inTermux()
-  return vim.fn.exists('termux-setup-storage')
+  return vim.fn.exists('termux-setup-storage') == 1
 end
 
 function previmConfig()
