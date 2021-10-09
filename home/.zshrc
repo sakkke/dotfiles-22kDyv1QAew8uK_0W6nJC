@@ -15,6 +15,10 @@ export SAVEHIST=1000000
 
 export PATH="$PATH:$HOME/.local/bin"
 
+function chpwd {
+  ls --color=auto -A
+}
+
 function enter-temp {
   temp="$(mktemp -d)"
   trap "rm -fr '$temp'" EXIT
