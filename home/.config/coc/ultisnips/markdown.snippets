@@ -25,12 +25,16 @@
 # Online reference: https://github.com/SirVer/ultisnips/blob/master/doc/UltiSnips.txt
 
 snippet Evalblock "Evalblock" b
-<!-- require: ${1:sympy} target: ${2:foo} -->
+**In [${1:foo}]:**
+
+<!-- require: ${2:sympy} target: $1 -->
 \`\`\`${3:python}
 ${4:print('hello, world')}
 \`\`\`
 
-<!-- name: $2 -->
+**Out [$1]:**
+
+<!-- name: $1 -->
 \`\`\`${5:katex}
 \`\`\`$0
 endsnippet
@@ -42,10 +46,14 @@ $1
 endsnippet
 
 snippet evalblock "evalblock" b
-<!-- target: ${1:foo} -->
+**In [${1:foo}]:**
+
+<!-- target: $1 -->
 \`\`\`${2:python}
 ${3:print('hello, world')}
 \`\`\`
+
+**Out [$1]:**
 
 <!-- name: $1 -->
 \`\`\`${4:text}
