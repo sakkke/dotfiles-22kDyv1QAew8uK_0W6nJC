@@ -554,6 +554,17 @@ return packer.startup({function(use)
             '#5f81ac', -- nord10
             '#b48ead', -- nord15
           },
+          termcolors = {
+            '1',  -- nord11
+            '11', -- nord12
+            '3',  -- nord13
+            '2',  -- nord14
+            '14', -- nord7
+            '6',  -- nord8
+            '4',  -- nord9
+            '12', -- nord10
+            '5',  -- nord15
+          },
         },
       }
     end,
