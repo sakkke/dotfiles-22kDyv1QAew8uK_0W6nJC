@@ -14,5 +14,5 @@ touch ~/.gitconfig.local
 touch ~/.zaliases.local
 touch ~/.zshrc.local
 if in_termux && [ ! -d "$previm_path" ]; then
-  git clone --depth=1 https://github.com/sakkke/previm "$previm_path"
+  git clone --depth=1 -b latest https://github.com/sakkke/previm "$previm_path"
 fi
