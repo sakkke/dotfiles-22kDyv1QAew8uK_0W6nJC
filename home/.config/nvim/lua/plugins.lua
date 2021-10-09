@@ -548,6 +548,10 @@ return packer.startup({function(use)
             '#d08770', -- nord12
             '#ebcb8b', -- nord13
             '#a3be8c', -- nord14
+            '#8fbcbb', -- nord7
+            '#88c0d0', -- nord8
+            '#81a1c1', -- nord9
+            '#5f81ac', -- nord10
             '#b48ead', -- nord15
           },
         },
