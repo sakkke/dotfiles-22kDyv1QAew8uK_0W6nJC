@@ -372,7 +372,11 @@ return require('packer').startup({function()
         highlight IndentBlanklineIndent2 guifg=#d08770 blend=nocombine " nord12
         highlight IndentBlanklineIndent3 guifg=#ebcb8b blend=nocombine " nord13
         highlight IndentBlanklineIndent4 guifg=#a3be8c blend=nocombine " nord14
-        highlight IndentBlanklineIndent5 guifg=#b48ead blend=nocombine " nord15
+        highlight IndentBlanklineIndent5 guifg=#8fbcbb blend=nocombine " nord7
+        highlight IndentBlanklineIndent6 guifg=#88c0d0 blend=nocombine " nord8
+        highlight IndentBlanklineIndent7 guifg=#81a1c1 blend=nocombine " nord9
+        highlight IndentBlanklineIndent8 guifg=#5f81ac blend=nocombine " nord10
+        highlight IndentBlanklineIndent9 guifg=#b48ead blend=nocombine " nord15
       ]]
       require('indent_blankline').setup {
         char_highlight_list = {
@@ -381,6 +385,10 @@ return require('packer').startup({function()
           'IndentBlanklineIndent3',
           'IndentBlanklineIndent4',
           'IndentBlanklineIndent5',
+          'IndentBlanklineIndent6',
+          'IndentBlanklineIndent7',
+          'IndentBlanklineIndent8',
+          'IndentBlanklineIndent9',
         },
         filetype_exclude = {
           'NvimTree',
