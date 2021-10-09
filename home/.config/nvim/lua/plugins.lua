@@ -571,7 +571,6 @@ return packer.startup({function(use)
   use {
     '/sdcard/previm',
     as = 'previm-in-termux',
-    branch = 'latest',
     config = previmConfig,
     disable = not (inTermux() and vim.fn.isdirectory('/sdcard/previm')),
   }
