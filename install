@@ -1,4 +1,8 @@
 #!/bin/sh
+in_termux() {
+  type termux-setup-storage 2>&1 >/dev/null
+}
+previm_path=/sdcard/previm
 cd "$(dirname "$0")"
 find home -type f |
   xargs -I% sh -c 'echo "%" | sed "s:^home/::"' |
@@ -9,3 +13,6 @@ touch ~/.config/nvim/tasks_local.ini
 touch ~/.gitconfig.local
 touch ~/.zaliases.local
 touch ~/.zshrc.local
+if in_termux && [ ! -d "$previm_path" ]; then
+  git clone --depth=1 https://github.com/sakkke/previm "$previm_path"
+fi
