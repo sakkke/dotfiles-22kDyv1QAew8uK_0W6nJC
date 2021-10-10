@@ -632,6 +632,9 @@ return packer.startup({function(use)
   use 'tpope/vim-sleuth'
   use {
     'tpope/vim-surround',
+    config = function()
+      vim.g.surround_61 = '==\r=='
+    end,
     requires = 'tpope/vim-repeat',
   }
   use {'tribela/vim-transparent', opt = true}
