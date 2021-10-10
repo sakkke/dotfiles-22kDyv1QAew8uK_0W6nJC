@@ -630,6 +630,10 @@ return packer.startup({function(use)
   }
   use 'thanthese/Tortoise-Typing'
   use 'tpope/vim-sleuth'
+  use {
+    'tpope/vim-surround',
+    requires = 'tpope/vim-repeat',
+  }
   use {'tribela/vim-transparent', opt = true}
   use 'vim-jp/vimdoc-ja'
   use {
