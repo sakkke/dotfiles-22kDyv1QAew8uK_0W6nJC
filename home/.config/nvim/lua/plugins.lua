@@ -274,6 +274,7 @@ return packer.startup({function(use)
           L = {'<Cmd>lua toggleTranslatorLang()<CR>', 'TranslatorLang'},
           T = {'<Cmd>TransparentToggle<CR>', 'Transparent'},
           a = {'<Cmd>ASToggle<CR>', 'AutoSave'},
+          e = {'<Cmd>ToggleEducate<CR>', 'Educate'},
           f = {'<Cmd>FocusToggle<CR>', 'Focus'},
           g = {'<Cmd>Goyo<CR>', 'Goyo'},
           h = {'<Cmd>Hexmode<CR>', 'Hexmode'},
@@ -374,6 +375,7 @@ return packer.startup({function(use)
       'kana/vim-textobj-indent', -- `ai`/`ii`,`aI`,`iI`
       'kana/vim-textobj-syntax', -- `ay`/`iy`
       'mattn/vim-textobj-url', -- `au`/`iu`
+      'preservim/vim-textobj-quote', -- `aq`/`iq`,`aQ`,`iQ`
     },
   }
   use {
