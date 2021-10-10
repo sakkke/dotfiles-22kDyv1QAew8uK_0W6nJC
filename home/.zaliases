@@ -1,6 +1,7 @@
 # vim: ft=zsh
 zalias e=editor
 zalias egrep='grep -E'
+zalias g=git
 zalias l=ls
 zalias la='ls -A'
 zalias ll='ls -al'
