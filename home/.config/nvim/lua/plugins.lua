@@ -278,6 +278,7 @@ return packer.startup({function(use)
           g = {'<Cmd>Goyo<CR>', 'Goyo'},
           h = {'<Cmd>Hexmode<CR>', 'Hexmode'},
           l = {'<Cmd>Limelight!!<CR>', 'Limelight'},
+          m = {'<Cmd>MinimapToggle<CR>', 'Minimap'},
           t = {'<Cmd>NvimTreeToggle<CR>', 'NvimTree'},
           u = {'<Cmd>UndotreeToggle<CR>', 'Undotree'},
         },
@@ -586,6 +587,10 @@ return packer.startup({function(use)
   use {
     'plasticboy/vim-markdown',
     requires = 'godlygeek/tabular',
+  }
+  use {
+    'rinx/nvim-minimap',
+    requires = {{'Olical/aniseed', tag = 'v3.23.0'}},
   }
   use {
     'sakkke/previm', -- previm/previm
