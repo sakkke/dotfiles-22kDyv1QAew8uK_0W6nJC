@@ -28,6 +28,7 @@ vim.o.virtualedit = 'onemore'
 vim.o.whichwrap = 'b,s,h,l' -- vim.o.whichwrap..',h,l'
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ','
+vim.g.no_man_maps = 1
 
 -- Emacs like
 vim.api.nvim_set_keymap('c', '<C-a>', '<Home>', {noremap = true})
