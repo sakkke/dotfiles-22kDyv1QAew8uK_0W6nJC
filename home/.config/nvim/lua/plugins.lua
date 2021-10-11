@@ -431,6 +431,7 @@ return packer.startup({function(use)
           'floaterm',
           'gesture',
           'help',
+          'man',
           'packer',
           'startify',
           'translator',
