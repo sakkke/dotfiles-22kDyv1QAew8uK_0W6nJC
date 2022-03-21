@@ -1,7 +1,0 @@
-#!/bin/bash
-temp="$(mktemp -d)"
-trap "rm -fr '$temp'" EXIT
-srcfile="$1"
-outfile="$temp/a.out"
-gcc -x c -o "$outfile" "$srcfile"
-"$outfile"
