@@ -18,7 +18,8 @@ set $term kitty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu dmenu_path | dmenu | xargs swaymsg exec --
+for_window [app_id="^launcher$"] border pixel 10, floating enable, resize set 30 ppt 60 ppt, sticky enable
+set $menu $term --class=launcher /bin/sh -c 'BEMENU_BACKEND=curses bemenu-run --no-exec | xargs swaymsg exec --'
 
 ### Output configuration
 #
