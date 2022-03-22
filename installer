@@ -1,0 +1,125 @@
+#!/usr/bin/env bash
+
+set -eu
+
+PROG_NAME="$(basename "$0")"
+all=false
+dirs=()
+dry=
+mode=ln
+
+function main {
+  cd "$(dirname "$0")"
+
+  while getopts ad:hm:n opt; do
+    case "$opt" in
+      a )
+        all=true
+        ;;
+
+      d )
+        dirs+=("$OPTARG")
+        ;;
+
+      h )
+        get_help
+        exit 0
+        ;;
+
+      m )
+        mode="$OPTARG"
+        ;;
+
+      n )
+        dry='echo -e \e[1;36mDry:\e[m'
+        ;;
+    esac
+  done
+
+  if [[ $all = false ]]; then
+    if [[ ${#dirs[@]} -lt 1 ]]; then
+      error 'there is nothing to do'
+      get_help
+      return 3
+    fi
+
+    for dir in "${dirs[@]}"; do
+      if [[ -d $dir ]]; then
+        continue
+      fi
+
+      error 'not found:' "$dir"
+      return 4
+    done
+  fi
+
+  if [[ $all = false ]]; then
+    for dir in "${dirs[@]}"; do
+      git ls-files -z "$dir"
+    done
+  else
+    find -maxdepth 1 -mindepth 1 -type d -print0 | xargs -0 git ls-files -z
+  fi | while IFS= read -rd $'\0' file; do
+    relative_path="${file#*/}"
+    out_file="$HOME/$relative_path"
+    parent_dir="$(dirname "$out_file")"
+    src_file="$PWD/$file"
+
+    case "$mode" in
+      ln )
+        if [[ ! -d $parent_dir ]]; then
+          $dry mkdir -pv "$parent_dir"
+        fi
+
+        if [[ "$(realpath "$out_file")" = "$src_file" ]]; then
+          info 'already linked... skipping:' "$src_file"
+          continue
+        elif [[ -e $out_file ]]; then
+          warn 'skipping to avoid overwriting:' "$src_file"
+          continue
+        fi
+
+        $dry ln -sv "$src_file" "$out_file"
+        ;;
+
+      rm )
+        if [[ "$(realpath "$out_file")" != "$src_file" ]]; then
+          info 'not linked... skipping:' "$src_file"
+          continue
+        fi
+
+        $dry rm -v "$out_file"
+        ;;
+    esac
+  done
+}
+
+function error {
+  printf '\e[1;31mError:\e[m %s\n' "$*"
+}
+
+function get_help {
+  cat << /cat
+
+Usage:
+  $PROG_NAME [options]
+
+Options:
+  -a          mark all dirs
+  -d <dir>    mark the dir
+  -m <ln|rm>  set the mode [default: ln]
+  -n          perform a trial run with no changes made
+
+  -h          display this help
+/cat
+}
+
+function info {
+  printf '\e[1;32mInfo:\e[m %s\n' "$*"
+}
+
+function warn {
+  printf '\e[1;33mWarn:\e[m %s\n' "$*"
+}
+
+main "$@"
