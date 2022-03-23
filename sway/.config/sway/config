@@ -208,4 +208,9 @@ bar {
     swaybar_command waybar
 }
 
+#
+# Appearance:
+#
+gaps inner 20
+
 include /etc/sway/config.d/*
