@@ -4,6 +4,10 @@ firefox-i18n-ja
 git
 inter-font
 kitty
+noto-fonts
+noto-fonts-cjk
+noto-fonts-emoji
+noto-fonts-extra
 starship
 sway
 ttf-fira-code
