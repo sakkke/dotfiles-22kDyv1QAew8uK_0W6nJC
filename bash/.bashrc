@@ -14,3 +14,5 @@ elif [[ -z $TMUX ]]; then
 elif [[ -z $RANGER_LEVEL ]]; then
   exec ranger
 fi
+
+eval "$(starship init bash)"
