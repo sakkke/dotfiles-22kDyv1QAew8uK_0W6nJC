@@ -7,7 +7,9 @@ if [[ ! $- =~ i ]]; then
   return
 fi
 
-if [[ -z $TMUX ]]; then
+if ! pidof -q sway; then
+  exec sway
+elif [[ -z $TMUX ]]; then
   exec tmux
 elif [[ -z $RANGER_LEVEL ]]; then
   exec ranger
