@@ -211,6 +211,7 @@ bar {
 #
 # Appearance:
 #
+default_border none
 gaps inner 20
 
 include /etc/sway/config.d/*
