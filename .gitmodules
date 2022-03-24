@@ -22,3 +22,6 @@
 [submodule "catppuccin/.local/share/catppuccin/sublime-text"]
 	path = catppuccin/.local/share/catppuccin/sublime-text
 	url = https://github.com/catppuccin/sublime-text.git
+[submodule "ranger/.config/ranger/plugins/devicons2"]
+	path = ranger/.config/ranger/plugins/devicons2
+	url = https://github.com/cdump/ranger-devicons2.git
