@@ -7,11 +7,11 @@ if [[ ! $- =~ i ]]; then
   return
 fi
 
-if ! pidof -q sway; then
+if type sway &> /dev/null && ! pidof -q sway; then
   exec sway
-elif [[ -z $TMUX ]]; then
+elif type tmux &> /dev/null && [[ -z $TMUX ]]; then
   exec tmux
-elif [[ -z $RANGER_LEVEL ]]; then
+elif type ranger &> /dev/null && [[ -z $RANGER_LEVEL ]]; then
   exec ranger
 fi
 
