@@ -24,7 +24,7 @@ set $menu $term --class=launcher /bin/sh -c 'BEMENU_BACKEND=curses bemenu-run --
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg ~/.local/share/backgrounds/catppuccin/landscapes/forrest.png fill
+output * bg ~/.local/share/catppuccin/wallpapers/landscapes/forrest.png fill
 #
 # Example configuration:
 #
