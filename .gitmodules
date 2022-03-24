@@ -19,3 +19,6 @@
 [submodule "catppuccin/.local/share/catppuccin/termux"]
 	path = catppuccin/.local/share/catppuccin/termux
 	url = https://github.com/catppuccin/termux.git
+[submodule "catppuccin/.local/share/catppuccin/sublime-text"]
+	path = catppuccin/.local/share/catppuccin/sublime-text
+	url = https://github.com/catppuccin/sublime-text.git
