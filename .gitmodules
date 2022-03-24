@@ -1,5 +1,5 @@
 [submodule "sway/.local/share/backgrounds/catppuccin"]
-	path = backgrounds/.local/share/backgrounds/catppuccin
+	path = catppuccin/.local/share/catppuccin/wallpapers
 	url = https://github.com/catppuccin/wallpapers.git
 [submodule "nerd-fonts/.local/share/nerd-fonts"]
 	path = nerd-fonts/.local/share/nerd-fonts
