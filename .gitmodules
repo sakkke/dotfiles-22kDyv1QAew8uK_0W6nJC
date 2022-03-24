@@ -16,3 +16,6 @@
 [submodule "catppuccin/.local/share/catppuccin/kitty"]
 	path = catppuccin/.local/share/catppuccin/kitty
 	url = https://github.com/catppuccin/kitty.git
+[submodule "catppuccin/.local/share/catppuccin/termux"]
+	path = catppuccin/.local/share/catppuccin/termux
+	url = https://github.com/catppuccin/termux.git
