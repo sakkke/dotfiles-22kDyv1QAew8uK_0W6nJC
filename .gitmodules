@@ -4,3 +4,6 @@
 [submodule "nerd-fonts/.local/share/nerd-fonts"]
 	path = nerd-fonts/.local/share/nerd-fonts
 	url = https://github.com/ryanoasis/nerd-fonts.git
+[submodule "google-fonts/.local/share/google-fonts"]
+	path = google-fonts/.local/share/google-fonts
+	url = https://github.com/google/fonts.git
