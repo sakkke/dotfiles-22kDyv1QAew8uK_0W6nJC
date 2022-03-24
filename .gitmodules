@@ -10,3 +10,6 @@
 [submodule "catppuccin/.local/share/catppuccin/btop"]
 	path = catppuccin/.local/share/catppuccin/btop
 	url = https://github.com/catppuccin/btop.git
+[submodule "catppuccin/.local/share/catppuccin/tmux"]
+	path = catppuccin/.local/share/catppuccin/tmux
+	url = https://github.com/catppuccin/tmux.git
