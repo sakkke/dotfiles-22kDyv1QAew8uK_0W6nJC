@@ -1,73 +1,83 @@
 * {
-  border: none;
-  border-radius: 0;
-  font-family: Roboto, Helvetica, Arial, sans-serif;
-  font-size: 13px;
+  font-family: VictorMono Nerd Font;
   min-height: 0;
+  min-width: 0;
 }
 
 window#waybar {
-  background: rgba(43, 48, 59, 0.5);
-  border-bottom: 3px solid rgba(100, 114, 125, 0.5);
-  color: white;
+  background-color: transparent;
 }
 
 tooltip {
-  background: rgba(43, 48, 59, 0.5);
-  border: 1px solid rgba(100, 114, 125, 0.5);
+  background-color: alpha(@theme_base_color, 0.9);
 }
 tooltip label {
-  color: white;
+  color: @theme_text_color;
+}
+
+#window {
+  background-color: alpha(@theme_base_color, 0.9);
+  border-radius: 9999px;
+  color: @theme_text_color;
+  font-size: 20px;
+  font-style: italic;
+  margin-right: 20px;
+  padding: 0.5em;
 }
 
 #workspaces button {
-  padding: 0 5px;
-  background: transparent;
-  color: white;
-  border-bottom: 3px solid transparent;
+  background-color: alpha(@theme_bg_color, 0.9);
+  border-radius: 9999px;
+  color: @theme_fg_color;
+  font-size: 10px;
+  margin: 20px 20px 0 0;
+  padding: 0.5em;
 }
 
 #workspaces button.focused {
-  background: #64727D;
-  border-bottom: 3px solid white;
+  background-color: @theme_selected_bg_color;
+  color: @theme_selected_fg_color;
 }
 
 #mode, #clock, #battery {
-  padding: 0 10px;
+  border-radius: 9999px;
+  font-size: 10px;
+  margin: 0 20px 20px 0;
+  padding: 0.5em;
 }
 
 #mode {
-  background: #64727D;
-  border-bottom: 3px solid white;
+  background-color: @insensitive_bg_color;
+  color: @insensitive_fg_color;
+  margin-top: 20px;
 }
 
 #clock {
-  background-color: #64727D;
+  background-color: @insensitive_bg_color;
+  color: @insensitive_fg_color;
 }
 
 #battery {
-  background-color: #ffffff;
-  color: black;
+  background-color: alpha(@theme_bg_color, 0.9);
+  color: @theme_fg_color;
 }
 
 #battery.charging {
-  color: white;
-  background-color: #26A65B;
+  color: @success_color;
 }
 
 @keyframes blink {
   to {
-    background-color: #ffffff;
-    color: black;
+    background-color: alpha(@theme_bg_color, 0.9);
+    color: @theme_fg_color;
   }
 }
 
 #battery.warning:not(.charging) {
-  background: #f53c3c;
-  color: white;
   animation-name: blink;
   animation-duration: 0.5s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-direction: alternate;
+  color: @error_color;
 }
