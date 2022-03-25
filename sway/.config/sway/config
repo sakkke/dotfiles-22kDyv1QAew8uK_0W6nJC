@@ -214,4 +214,9 @@ bar {
 default_border none
 gaps inner 20
 
+exec_always {
+    gsettings set org.gnome.desktop.interface cursor-theme 'Catppuccin Blue'
+    gsettings set org.gnome.desktop.interface gtk-theme Catppuccin-blue
+}
+
 include /etc/sway/config.d/*
