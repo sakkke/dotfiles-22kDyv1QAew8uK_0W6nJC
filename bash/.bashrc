@@ -7,6 +7,8 @@ if [[ ! $- =~ i ]]; then
   return
 fi
 
+export EDITOR=nvim
+
 if type sway &> /dev/null && ! pidof -q sway; then
   exec sway
 elif type tmux &> /dev/null && ! pidof -q tmux && [[ -z $TMUX ]]; then
