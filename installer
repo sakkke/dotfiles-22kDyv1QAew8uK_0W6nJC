@@ -71,7 +71,7 @@ function main {
           $dry mkdir -pv "$parent_dir"
         fi
 
-        if [[ "$(realpath "$out_file")" = "$(realpath "$src_file")" ]]; then
+        if [[ -z $dry ]] && [[ "$(realpath "$out_file")" = "$(realpath "$src_file")" ]]; then
           info 'already linked... skipping:' "$src_file"
           continue
         elif [[ -e $out_file ]]; then
