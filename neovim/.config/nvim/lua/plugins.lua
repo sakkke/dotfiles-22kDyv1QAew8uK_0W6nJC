@@ -14,7 +14,7 @@ vim.cmd([[
   augroup end
 ]])
 
-return require('packer').startup(function(use)
+return require('packer').startup({function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
@@ -49,4 +49,11 @@ return require('packer').startup(function(use)
   if packer_bootstrap then
     require('packer').sync()
   end
-end)
+end,
+config = {
+  display = {
+    open_fn = function()
+      return require('packer.util').float({ border = 'single' })
+    end
+  }
+}})
