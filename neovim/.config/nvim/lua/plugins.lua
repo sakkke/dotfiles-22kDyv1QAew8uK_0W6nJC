@@ -23,7 +23,8 @@ return require('packer').startup(function(use)
   -- use 'foo2/bar2.nvim'
   use({
     "sakkke/catppuccin-nvim",
-    as = "catppuccin"
+    as = "catppuccin",
+    run = ":colorscheme catppuccin"
   })
   use {
     'feline-nvim/feline.nvim',
