@@ -173,6 +173,12 @@ return require('packer').startup({function(use)
     },
   }
   use {
+    "lukas-reineke/indent-blankline.nvim",
+    config = function()
+      require("indent_blankline").setup {}
+    end,
+  }
+  use {
     'nvim-treesitter/nvim-treesitter',
     config = function()
       require'nvim-treesitter.configs'.setup {
