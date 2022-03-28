@@ -26,6 +26,7 @@ return require('packer').startup({function(use)
     as = "catppuccin",
     run = ":colorscheme catppuccin"
   })
+  use 'editorconfig/editorconfig-vim'
   use {
     'feline-nvim/feline.nvim',
     config = function()
