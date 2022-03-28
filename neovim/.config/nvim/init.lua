@@ -1,4 +1,4 @@
 require 'plugins'
 vim.o.number = true
 vim.o.relativenumber = true
-vim.cmd[[colorscheme catppuccin]]
+vim.cmd[[silent! colorscheme catppuccin]]
