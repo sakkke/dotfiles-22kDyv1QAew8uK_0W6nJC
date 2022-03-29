@@ -18,5 +18,7 @@ noto-fonts-extra
 npm
 starship
 sway
+swayidle
+swaylock
 task
 waybar
