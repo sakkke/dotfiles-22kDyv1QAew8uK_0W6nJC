@@ -16,10 +16,12 @@ noto-fonts-cjk
 noto-fonts-emoji
 noto-fonts-extra
 npm
+ranger
 starship
 sway
 swayidle
 swaylock
 task
+tmux
 waybar
 wayvnc
