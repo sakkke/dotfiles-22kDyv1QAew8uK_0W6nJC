@@ -1,0 +1,5 @@
+output HEADLESS-1 resolution 1080x1920 position 1080,0
+
+exec wayvnc -C ~/.config/swayd/wayvnc/config
+
+include ~/.config/sway/config

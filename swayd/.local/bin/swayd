@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+exec env \
+  WLR_BACKENDS=headless \
+  WLR_LIBINPUT_NO_DEVICES=1 \
+  sway -dc ~/.config/swayd/sway/config
