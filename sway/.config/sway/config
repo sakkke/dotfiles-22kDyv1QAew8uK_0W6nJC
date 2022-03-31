@@ -213,6 +213,11 @@ bar {
 }
 
 #
+# Notification Daemon:
+#
+exec mako
+
+#
 # Appearance:
 #
 default_border none
