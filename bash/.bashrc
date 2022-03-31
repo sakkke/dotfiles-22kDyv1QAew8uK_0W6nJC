@@ -8,6 +8,7 @@ if [[ ! $- =~ i ]]; then
 fi
 
 export EDITOR=nvim
+export PATH="$HOME/.local/bin:$PATH"
 
 if type sway &> /dev/null && ! pidof -q sway; then
   exec sway
