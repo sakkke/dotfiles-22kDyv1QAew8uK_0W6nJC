@@ -213,6 +213,13 @@ bar {
 }
 
 #
+# Audio:
+#
+exec pipewire
+exec wireplumber
+exec pipewire-pulse
+
+#
 # Notification Daemon:
 #
 exec mako

@@ -17,6 +17,8 @@ noto-fonts-cjk
 noto-fonts-emoji
 noto-fonts-extra
 npm
+pipewire
+pipewire-pulse
 ranger
 starship
 sway
@@ -26,3 +28,4 @@ task
 tmux
 waybar
 wayvnc
+wireplumber
