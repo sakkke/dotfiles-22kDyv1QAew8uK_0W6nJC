@@ -225,6 +225,11 @@ exec pipewire-pulse
 exec mako
 
 #
+# Music Player Daemon:
+#
+exec mpd
+
+#
 # Appearance:
 #
 default_border none
