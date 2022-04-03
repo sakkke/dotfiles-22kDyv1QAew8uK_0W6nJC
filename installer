@@ -101,6 +101,7 @@ function main {
         fi
 
         $dry rm -v "$out_file"
+        $dry recursive_rmdir "$(dirname "$out_file")"
         ;;
 
       * )
@@ -109,6 +110,18 @@ function main {
         ;;
     esac
   done
+}
+
+function recursive_rmdir {
+  local dir="$1"
+
+  if [[ -d "$dir" ]]; then
+    rmdir -v "$dir" 2> /dev/null || return
+    recursive_rmdir "$(dirname "$dir")"
+  else
+    error 'not a directory:' "$dir"
+    return 3
+  fi
 }
 
 function error {
