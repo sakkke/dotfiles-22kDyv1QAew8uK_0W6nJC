@@ -215,6 +215,27 @@ mode "resize" {
     bindsym Escape mode "default"
 }
 bindsym $mod+r mode "resize"
+#
+# Control MPD:
+#
+mode "mpd" {
+    # Control volume
+    bindsym XF86AudioRaiseVolume exec mpc volume +5
+    bindsym $up exec mpc volume +5
+    bindsym XF86AudioLowerVolume exec mpc volume -5
+    bindsym $down exec mpc volume -5
+    bindsym XF86AudioPlay exec mpc toggle
+    bindsym Space exec mpc toggle
+    bindsym XF86AudioNext exec mpc next
+    bindsym $right exec mpc next
+    bindsym XF86AudioPrev exec mpc prev
+    bindsym $left exec mpc prev
+
+    # Return to default mode
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+m mode "mpd"
 
 #
 # Status Bar:
