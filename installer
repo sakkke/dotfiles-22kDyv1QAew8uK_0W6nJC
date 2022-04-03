@@ -60,6 +60,18 @@ function main {
   else
     find -maxdepth 1 -mindepth 1 -type d -print0 | xargs -0 git ls-files -z
   fi | while IFS= read -rd $'\0' file; do
+    if grep -q '/.gitkeep$' <<< "$file"; then
+      dir="$(dirname "$file")"
+      relative_path="${dir#*/}"
+      target_dir="$HOME/$relative_path"
+
+      if [[ ! -d $target_dir ]]; then
+        $dry mkdir -pv "$target_dir"
+      fi
+
+      continue
+    fi
+
     relative_path="${file#*/}"
     out_file="$HOME/$relative_path"
     parent_dir="$(dirname "$out_file")"
