@@ -1,27 +1,27 @@
 [submodule "sway/.local/share/backgrounds/catppuccin"]
-	path = catppuccin/.local/share/catppuccin/wallpapers
+	path = catppuccin.archlinux/.local/share/catppuccin/wallpapers
 	url = https://github.com/catppuccin/wallpapers.git
 [submodule "nerd-fonts/.local/share/nerd-fonts"]
-	path = nerd-fonts/.local/share/nerd-fonts
+	path = nerd-fonts.archlinux/.local/share/nerd-fonts
 	url = https://github.com/ryanoasis/nerd-fonts.git
 [submodule "google-fonts/.local/share/google-fonts"]
-	path = google-fonts/.local/share/google-fonts
+	path = google-fonts.archlinux/.local/share/google-fonts
 	url = https://github.com/google/fonts.git
 [submodule "catppuccin/.local/share/catppuccin/btop"]
-	path = catppuccin/.local/share/catppuccin/btop
+	path = catppuccin.archlinux/.local/share/catppuccin/btop
 	url = https://github.com/catppuccin/btop.git
 [submodule "catppuccin/.local/share/catppuccin/tmux"]
-	path = catppuccin/.local/share/catppuccin/tmux
+	path = catppuccin.archlinux/.local/share/catppuccin/tmux
 	url = https://github.com/sakkke/catppuccin-tmux.git
 [submodule "catppuccin/.local/share/catppuccin/kitty"]
-	path = catppuccin/.local/share/catppuccin/kitty
+	path = catppuccin.archlinux/.local/share/catppuccin/kitty
 	url = https://github.com/catppuccin/kitty.git
 [submodule "catppuccin/.local/share/catppuccin/termux"]
-	path = catppuccin/.local/share/catppuccin/termux
+	path = catppuccin.archlinux/.local/share/catppuccin/termux
 	url = https://github.com/catppuccin/termux.git
 [submodule "catppuccin/.local/share/catppuccin/sublime-text"]
-	path = catppuccin/.local/share/catppuccin/sublime-text
+	path = catppuccin.archlinux/.local/share/catppuccin/sublime-text
 	url = https://github.com/catppuccin/sublime-text.git
 [submodule "ranger/.config/ranger/plugins/devicons2"]
-	path = ranger/.config/ranger/plugins/devicons2
+	path = ranger.archlinux/.config/ranger/plugins/devicons2
 	url = https://github.com/cdump/ranger-devicons2.git
