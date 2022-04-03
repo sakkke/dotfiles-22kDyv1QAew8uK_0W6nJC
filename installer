@@ -7,11 +7,12 @@ all=false
 dirs=()
 dry=
 mode=ln
+profile=archlinux
 
 function main {
   cd "$(dirname "$0")"
 
-  while getopts ad:hm:n opt; do
+  while getopts ad:hm:np: opt; do
     case "$opt" in
       a )
         all=true
@@ -33,6 +34,10 @@ function main {
       n )
         dry='echo -e \e[1;36mDry:\e[m'
         ;;
+
+      p )
+        profile="$OPTARG"
+        ;;
     esac
   done
 
@@ -43,8 +48,13 @@ function main {
       return 3
     fi
 
-    for dir in "${dirs[@]}"; do
+    for ((i = 0; i < ${#dirs[@]}; i++)); do
+      dir="${dirs[i]}"
+
       if [[ -d $dir ]]; then
+        continue
+      elif [[ -d $dir.$profile ]]; then
+        dirs[i]="$dir.$profile"
         continue
       fi
 
@@ -58,7 +68,11 @@ function main {
       git ls-files -z "$dir"
     done
   else
-    find -maxdepth 1 -mindepth 1 -type d -print0 | xargs -0 git ls-files -z
+    find -maxdepth 1 -mindepth 1 -type d -print0 | while IFS= read -rd $'\0' dir; do
+      if grep -q ".$profile$" <<< "$dir"; then
+        printf '%s\0' "$dir"
+      fi
+    done | xargs -0 git ls-files -z
   fi | while IFS= read -rd $'\0' file; do
     if grep -q '/.gitkeep$' <<< "$file"; then
       dir="$(dirname "$file")"
@@ -135,12 +149,13 @@ Usage:
   $PROG_NAME [options]
 
 Options:
-  -a          mark all dirs
-  -d <dir>    mark the dir
-  -m <ln|rm>  set the mode [default: ln]
-  -n          perform a trial run with no changes made
+  -a            mark all dirs
+  -d <dir>      mark the dir
+  -m <ln|rm>    set the mode [default: ln]
+  -n            perform a trial run with no changes made
+  -p <profile>  set the profile name [default: archlinux]
 
-  -h          display this help
+  -h            display this help
 /cat
 }
 
