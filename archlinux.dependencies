@@ -22,6 +22,7 @@ npm
 pamixer
 pipewire
 pipewire-pulse
+playerctl
 ranger
 starship
 sway
