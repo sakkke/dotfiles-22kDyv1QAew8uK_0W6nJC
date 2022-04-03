@@ -13,3 +13,6 @@ insert_final_newline = false
 
 [/git/.gitconfig]
 indent_style = tab
+
+[/sway/.config/sway/config]
+indent_size = 4
