@@ -79,6 +79,10 @@ input * {
     # Lock your screen
     bindsym $mod+Delete exec swaylock
 
+    # Control the brightness
+    bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
+    bindsym XF86MonBrightnessUp exec brightnessctl set +5%
+
     # Control volume
     bindsym XF86AudioRaiseVolume exec pamixer -i 5
     bindsym XF86AudioLowerVolume exec pamixer -d 5
