@@ -273,4 +273,6 @@ exec_always {
     gsettings set org.gnome.desktop.interface gtk-theme Catppuccin-blue
 }
 
+for_window [app_id="firefox" title="^Picture-in-Picture"] floating enable, sticky enable
+
 include /etc/sway/config.d/*
