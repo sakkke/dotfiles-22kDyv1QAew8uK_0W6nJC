@@ -102,6 +102,11 @@ function main {
 
         $dry rm -v "$out_file"
         ;;
+
+      * )
+        error 'invalid mode:' "$mode"
+        return 5
+        ;;
     esac
   done
 }
