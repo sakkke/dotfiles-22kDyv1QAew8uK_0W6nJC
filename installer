@@ -3,6 +3,8 @@
 set -eu
 
 PROG_NAME="$(basename "$0")"
+DOTFILES_DIR="$HOME/.dotfiles"
+DOTFILES_REPO=https://github.com/sakkke/dotfiles.git
 all=false
 dirs=()
 dry=
@@ -40,6 +42,36 @@ function main {
         ;;
     esac
   done
+
+  case "$mode" in
+    init )
+      if [[ ! -d $DOTFILES_DIR ]]; then
+        git clone \
+          --depth 1 \
+          --single-branch \
+          -b main \
+          "$DOTFILES_REPO" \
+          "$DOTFILES_DIR"
+      fi
+
+      git -C "$DOTFILES_DIR" ls-files -s | grep '^160000 ' | while read -r _ _ _ submodule; do
+        profile_dir="${submodule%%/*}"
+        profile_name="${profile_dir#*.}"
+
+        if [[ $profile_name = $profile ]]; then
+          git -C "$DOTFILES_DIR" submodule update \
+            --depth 1 \
+            --init \
+            --recommend-shallow \
+            --recursive \
+            "$submodule"
+        fi
+      done
+
+      "$DOTFILES_DIR/installer" -ap "$profile"
+      return
+      ;;
+  esac
 
   if [[ $all = false ]]; then
     if [[ ${#dirs[@]} -lt 1 ]]; then
@@ -149,13 +181,13 @@ Usage:
   $PROG_NAME [options]
 
 Options:
-  -a            mark all dirs
-  -d <dir>      mark the dir
-  -m <ln|rm>    set the mode [default: ln]
-  -n            perform a trial run with no changes made
-  -p <profile>  set the profile name [default: archlinux]
+  -a               mark all dirs
+  -d <dir>         mark the dir
+  -m <init|ln|rm>  set the mode [default: ln]
+  -n               perform a trial run with no changes made
+  -p <profile>     set the profile name [default: archlinux]
 
-  -h            display this help
+  -h               display this help
 /cat
 }
 
