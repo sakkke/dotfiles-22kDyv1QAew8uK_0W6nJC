@@ -1,0 +1,34 @@
+{
+  "sparse-checkout": {
+    "catppuccin.archlinux/.local/share/catppuccin/wallpapers": [
+      "/landscapes/forrest.png",
+      "/landscapes/yosemite.png"
+    ],
+    "nerd-fonts.archlinux/.local/share/nerd-fonts": [
+      "/patched-fonts/VictorMono/"
+    ],
+    "google-fonts.archlinux/.local/share/google-fonts": [
+      "/ofl/flowblock/",
+      "/ofl/flowcirclar/",
+      "/ofl/flowrounded/"
+    ],
+    "catppuccin.archlinux/.local/share/catppuccin/btop": [
+      "/catppuccin.theme"
+    ],
+    "catppuccin.archlinux/.local/share/catppuccin/tmux": [
+      "/catppuccin.conf"
+    ],
+    "catppuccin.archlinux/.local/share/catppuccin/kitty": [
+      "/catppuccin.conf"
+    ],
+    "catppuccin.archlinux/.local/share/catppuccin/termux": [
+      "/colors.properties"
+    ],
+    "catppuccin.archlinux/.local/share/catppuccin/sublime-text": [
+      "/Catppuccin.tmTheme"
+    ],
+    "ranger.archlinux/.config/ranger/plugins/devicons2": [
+      "/"
+    ]
+  }
+}

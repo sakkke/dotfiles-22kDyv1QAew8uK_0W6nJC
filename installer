@@ -3,6 +3,7 @@
 set -eu
 
 PROG_NAME="$(basename "$0")"
+CONFIG=installer.config.json
 DOTFILES_DIR="$HOME/.dotfiles"
 DOTFILES_REPO=https://github.com/sakkke/dotfiles.git
 all=false
@@ -54,17 +55,33 @@ function main {
           "$DOTFILES_DIR"
       fi
 
-      git -C "$DOTFILES_DIR" ls-files -s | grep '^160000 ' | while read -r _ _ _ submodule; do
+      git -C "$DOTFILES_DIR" ls-files -s | grep '^160000 ' | while read -r _ commit _ submodule; do
         profile_dir="${submodule%%/*}"
         profile_name="${profile_dir#*.}"
 
         if [[ $profile_name = $profile ]]; then
-          git -C "$DOTFILES_DIR" submodule update \
-            --depth 1 \
-            --init \
-            --recommend-shallow \
-            --recursive \
-            "$submodule"
+          #git -C "$DOTFILES_DIR" submodule update \
+          #  --depth 1 \
+          #  --init \
+          #  --recommend-shallow \
+          #  --recursive \
+          #  "$submodule"
+          remote_origin_url="$(
+            git config -f "$DOTFILES_DIR/.gitmodules" --get-regexp url | while read -r key value; do
+              if [[ $key = "submodule.$submodule.url" ]]; then
+                printf %s "$value"
+              fi
+            done
+          )"
+          git clone \
+            --filter blob:none \
+            --no-checkout \
+            --sparse \
+            "$remote_origin_url" \
+            "$DOTFILES_DIR/$submodule"
+          git -C "$DOTFILES_DIR/$submodule" sparse-checkout init --cone
+          jq -r ".\"sparse-checkout\".\"$submodule\"[]" "$DOTFILES_DIR/$CONFIG" | xargs -L1 git -C "$DOTFILES_DIR/$submodule" sparse-checkout set
+          git -C "$DOTFILES_DIR/$submodule" switch -d "$commit"
         fi
       done
 
