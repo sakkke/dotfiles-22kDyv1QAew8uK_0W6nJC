@@ -108,6 +108,7 @@ function main {
 
       "$DOTFILES_DIR/installer" -am deps -p "$profile"
       "$DOTFILES_DIR/installer" -afp "$profile"
+      jq -r ".config.$profile.update[]" "$DOTFILES_DIR/$CONFIG" | bash
       return
       ;;
 
