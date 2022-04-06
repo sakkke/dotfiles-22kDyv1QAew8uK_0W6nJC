@@ -202,7 +202,18 @@ function recursive_rmdir {
   local dir="$1"
 
   if [[ -d "$dir" ]]; then
-    rmdir -v "$dir" 2> /dev/null || return 0
+    function rmdir_wrapper {
+      dir="$1"
+
+      if [[ ! -d "$dir" ]]; then
+        error 'not a directory:' "$dir"
+        return 3
+      fi
+
+      rmdir "$dir" &> /dev/null && info 'removed:' "$dir"
+    }
+
+    rmdir_wrapper "$dir" 2> /dev/null || return 0
     recursive_rmdir "$(dirname "$dir")"
   else
     error 'not a directory:' "$dir"
