@@ -71,12 +71,17 @@ function main {
         profile_name="${profile_dir#*.}"
 
         if [[ $profile_name = $profile ]]; then
-          #git -C "$DOTFILES_DIR" submodule update \
-          #  --depth 1 \
-          #  --init \
-          #  --recommend-shallow \
-          #  --recursive \
-          #  "$submodule"
+          if ! command -v jq &> /dev/null; then
+            warn 'jq command not found, so use the shallow clone as the fallback'
+            git -C "$DOTFILES_DIR" submodule update \
+              --depth 1 \
+              --init \
+              --recommend-shallow \
+              --recursive \
+              "$submodule"
+            continue
+          fi
+
           remote_origin_url="$(
             git config -f "$DOTFILES_DIR/.gitmodules" --get-regexp url | while read -r key value; do
               if [[ $key = "submodule.$submodule.url" ]]; then
