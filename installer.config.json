@@ -8,6 +8,16 @@
       "update": [
         "bat cache --build"
       ]
+    },
+    "termux": {
+      "preinstall": [
+        "apt update",
+        "apt upgrade -y"
+      ],
+      "install": "xargs -L1 apt install -y",
+      "update": [
+        "bat cache --build"
+      ]
     }
   },
   "sparse-checkout": {
