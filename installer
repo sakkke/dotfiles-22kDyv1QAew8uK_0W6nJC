@@ -91,7 +91,7 @@ function main {
             "$remote_origin_url" \
             "$DOTFILES_DIR/$submodule"
           git -C "$DOTFILES_DIR/$submodule" sparse-checkout init --cone
-          jq -r ".\"sparse-checkout\".\"$submodule\"[]" "$DOTFILES_DIR/$CONFIG" | xargs -L1 git -C "$DOTFILES_DIR/$submodule" sparse-checkout set
+          jq -r ".\"sparse-checkout\".\"$submodule\"[]" "$DOTFILES_DIR/$CONFIG" | xargs -L1 git -C "$DOTFILES_DIR/$submodule" sparse-checkout add
           git -C "$DOTFILES_DIR/$submodule" switch -d "$commit"
         fi
       done
