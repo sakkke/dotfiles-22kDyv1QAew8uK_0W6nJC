@@ -85,6 +85,8 @@ function main {
         fi
       done
 
+      jq -r ".config.$profile.preinstall[]" "$DOTFILES_DIR/$CONFIG" | bash
+      eval '$(jq -r ".config.$profile.install" "$DOTFILES_DIR/$CONFIG") < $DOTFILES_DIR/$profile.dependencies'
       "$DOTFILES_DIR/installer" -ap "$profile"
       return
       ;;

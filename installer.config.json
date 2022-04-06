@@ -1,6 +1,10 @@
 {
   "config": {
     "archlinux": {
+      "preinstall": [
+        "sudo pacman --noconfirm -Syu"
+      ],
+      "install": "sudo pacman --needed --noconfirm -S -",
       "update": [
         "bat cache --build"
       ]
