@@ -73,9 +73,8 @@ function main {
 
       git -C "$DOTFILES_DIR" ls-files -s | grep '^160000 ' | while read -r _ commit _ submodule; do
         profile_dir="${submodule%%/*}"
-        profile_name="${profile_dir#*.}"
 
-        if [[ $profile_name = $profile ]]; then
+        if [[ -e "$DOTFILES_DIR/${profile_dir%%.*}.$profile" ]]; then
           if ! command -v jq &> /dev/null; then
             warn 'jq command not found, so use the shallow clone as the fallback'
             git -C "$DOTFILES_DIR" submodule update \
