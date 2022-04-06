@@ -2,7 +2,7 @@
 
 set -eu
 
-PROG_NAME="$(basename "$0")"
+PROG_NAME=installer
 CONFIG=installer.config.json
 DOTFILES_DIR="$HOME/.dotfiles"
 DOTFILES_REPO=https://github.com/sakkke/dotfiles.git
