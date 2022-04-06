@@ -57,6 +57,11 @@ function main {
       ;;
 
     init )
+      if ! command -v git &> /dev/null; then
+        error 'git command not dound'
+        return 6
+      fi
+
       if [[ ! -d $DOTFILES_DIR ]]; then
         git clone \
           --depth 1 \
