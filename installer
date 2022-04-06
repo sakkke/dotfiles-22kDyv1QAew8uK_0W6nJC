@@ -9,13 +9,14 @@ DOTFILES_REPO=https://github.com/sakkke/dotfiles.git
 all=false
 dirs=()
 dry=
+force=false
 mode=ln
 profile=archlinux
 
 function main {
   cd "$(dirname "$0")"
 
-  while getopts ad:hm:np: opt; do
+  while getopts ad:fhm:np: opt; do
     case "$opt" in
       a )
         all=true
@@ -23,6 +24,10 @@ function main {
 
       d )
         dirs+=("$OPTARG")
+        ;;
+
+      f )
+        force=true
         ;;
 
       h )
@@ -154,6 +159,11 @@ function main {
           $dry mkdir -pv "$parent_dir"
         fi
 
+        if [[ $force = true ]]; then
+          $dry ln -fsv "$src_file" "$out_file"
+          continue
+        fi
+
         if [[ -z $dry ]] && [[ "$(realpath "$out_file")" = "$(realpath "$src_file")" ]]; then
           info 'already linked... skipping:' "$src_file"
           continue
@@ -208,6 +218,7 @@ Usage:
 Options:
   -a                      mark all dirs
   -d <dir>                mark the dir
+  -f                      remove existing destination files
   -m <init|ln|rm|update>  set the mode [default: ln]
   -n                      perform a trial run with no changes made
   -p <profile>            set the profile name [default: archlinux]
