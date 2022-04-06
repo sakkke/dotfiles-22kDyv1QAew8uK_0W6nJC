@@ -137,12 +137,12 @@ function main {
 
   if [[ $all = false ]]; then
     for dir in "${dirs[@]}"; do
-      git ls-files -z "$dir"
+      git ls-files -z "$(realpath "$dir")"
     done
   else
-    find -maxdepth 1 -mindepth 1 -type d -print0 | while IFS= read -rd $'\0' dir; do
+    find -maxdepth 1 -mindepth 1 \( -type d -o -type l \) -print0 | while IFS= read -rd $'\0' dir; do
       if grep -q ".$profile$" <<< "$dir"; then
-        printf '%s\0' "$dir"
+        printf '%s\0' "$(realpath "$dir")"
       fi
     done | xargs -0 git ls-files -z
   fi | while IFS= read -rd $'\0' file; do
