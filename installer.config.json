@@ -1,4 +1,11 @@
 {
+  "config": {
+    "archlinux": {
+      "update": [
+        "bat cache --build"
+      ]
+    }
+  },
   "sparse-checkout": {
     "catppuccin.archlinux/.local/share/catppuccin/wallpapers": [
       "/landscapes/forrest.png",
