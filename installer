@@ -50,6 +50,12 @@ function main {
   done
 
   case "$mode" in
+    deps )
+      jq -r ".config.$profile.preinstall[]" "$DOTFILES_DIR/$CONFIG" | bash
+      eval '$(jq -r ".config.$profile.install" "$DOTFILES_DIR/$CONFIG") < $DOTFILES_DIR/$profile.dependencies'
+      return
+      ;;
+
     init )
       if [[ ! -d $DOTFILES_DIR ]]; then
         git clone \
@@ -90,8 +96,7 @@ function main {
         fi
       done
 
-      jq -r ".config.$profile.preinstall[]" "$DOTFILES_DIR/$CONFIG" | bash
-      eval '$(jq -r ".config.$profile.install" "$DOTFILES_DIR/$CONFIG") < $DOTFILES_DIR/$profile.dependencies'
+      "$DOTFILES_DIR/installer" -am deps -p "$profile"
       "$DOTFILES_DIR/installer" -ap "$profile"
       return
       ;;
@@ -216,14 +221,14 @@ Usage:
   $PROG_NAME [options]
 
 Options:
-  -a                      mark all dirs
-  -d <dir>                mark the dir
-  -f                      remove existing destination files
-  -m <init|ln|rm|update>  set the mode [default: ln]
-  -n                      perform a trial run with no changes made
-  -p <profile>            set the profile name [default: archlinux]
+  -a                           mark all dirs
+  -d <dir>                     mark the dir
+  -f                           remove existing destination files
+  -m <deps|init|ln|rm|update>  set the mode [default: ln]
+  -n                           perform a trial run with no changes made
+  -p <profile>                 set the profile name [default: archlinux]
 
-  -h                      display this help
+  -h                           display this help
 /cat
 }
 
