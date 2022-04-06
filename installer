@@ -14,7 +14,7 @@ mode=ln
 profile=archlinux
 
 function main {
-  cd "$(dirname "$0")"
+  cd "$(dirname "$(realpath "$0")")"
 
   while getopts ad:fhm:np: opt; do
     case "$opt" in
