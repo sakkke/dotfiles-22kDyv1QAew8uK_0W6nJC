@@ -21,7 +21,8 @@
     "google-fonts.archlinux/.local/share/google-fonts": [
       "/ofl/flowblock/",
       "/ofl/flowcirclar/",
-      "/ofl/flowrounded/"
+      "/ofl/flowrounded/",
+      "/ofl/rocknrollone/"
     ],
     "catppuccin.archlinux/.local/share/catppuccin/btop": [
       "/catppuccin.theme"
