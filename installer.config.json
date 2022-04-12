@@ -17,7 +17,8 @@
       "install": "xargs -L1 apt install -y",
       "update": [
         "termux-reload-settings",
-        "bat cache --build"
+        "bat cache --build",
+        "termux-setup-storage"
       ]
     }
   },
