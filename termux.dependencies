@@ -2,6 +2,7 @@ bat
 git
 git-delta
 neovim
+nodejs
 ranger
 starship
 tmux
