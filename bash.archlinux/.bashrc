@@ -8,6 +8,8 @@ if [[ ! $- =~ i ]]; then
 fi
 
 export EDITOR=nvim
+export MANPAGER='nvim +Man!'
+export MANWIDTH=999
 export PATH="$HOME/.local/bin:$PATH"
 
 if type sway &> /dev/null && ! pidof -q sway; then
