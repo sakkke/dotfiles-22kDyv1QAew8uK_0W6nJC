@@ -8,6 +8,7 @@ neovim
 nodejs
 ranger
 starship
+taskwarrior
 tmux
 tsu
 zstd
