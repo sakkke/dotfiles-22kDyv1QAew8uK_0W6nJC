@@ -20,6 +20,11 @@
         "bat cache --build",
         "termux-setup-storage"
       ]
+    },
+    "windows": {
+      "preinstall": [],
+      "install": ":",
+      "update": []
     }
   },
   "sparse-checkout": {
