@@ -25,3 +25,6 @@
 [submodule "ranger.archlinux/.config/ranger/plugins/devicons2"]
 	path = ranger.archlinux/.config/ranger/plugins/devicons2
 	url = https://github.com/cdump/ranger-devicons2.git
+[submodule "neofetch.any/.dotfiles/.hidden/opt/neofetch"]
+	path = neofetch.any/.dotfiles/.hidden/opt/neofetch
+	url = https://github.com/dylanaraps/neofetch.git
