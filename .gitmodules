@@ -28,3 +28,6 @@
 [submodule "neofetch.any/.dotfiles/.hidden/opt/neofetch"]
 	path = neofetch.any/.dotfiles/.hidden/opt/neofetch
 	url = https://github.com/dylanaraps/neofetch.git
+[submodule "pfetch.any/.dotfiles/.hidden/opt/pfetch"]
+	path = pfetch.any/.dotfiles/.hidden/opt/pfetch
+	url = https://github.com/dylanaraps/pfetch.git
