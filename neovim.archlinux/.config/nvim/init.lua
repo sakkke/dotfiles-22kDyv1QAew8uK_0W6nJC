@@ -1,6 +1,7 @@
 require 'plugins'
 vim.o.list = true
 vim.o.listchars = 'eol:↵,extends:»,nbsp:*,precedes:«,space:·,tab:»-,trail:-'
+vim.o.mouse = 'a'
 vim.o.number = true
 vim.o.relativenumber = true
 vim.api.nvim_set_keymap('v', '<Leader>B', [[c<C-r>=system('base64 -d', @")<CR><Esc>]], { noremap = true, silent = true })
