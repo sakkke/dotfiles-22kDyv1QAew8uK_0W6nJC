@@ -21,6 +21,7 @@ return require('packer').startup({function(use)
   -- My plugins here
   -- use 'foo1/bar1.nvim'
   -- use 'foo2/bar2.nvim'
+  use "Pocco81/AutoSave.nvim"
   use({
     "sakkke/catppuccin-nvim", -- Forked from "catppuccin/nvim"
     as = "catppuccin",
