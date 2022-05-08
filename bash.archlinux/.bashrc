@@ -20,4 +20,8 @@ elif type ranger &> /dev/null && [[ -z $RANGER_LEVEL ]]; then
   exec ranger
 fi
 
+if [[ -f ~/.aliases ]]; then
+  source ~/.aliases
+fi
+
 eval "$(starship init bash)"

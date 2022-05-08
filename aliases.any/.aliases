@@ -1,0 +1,288 @@
+#!/bin/sh
+# ~/.aliases - List of aliases.
+# Created by Konosuke Sakai <w32w64@gmail.com>, May 8, 2022.
+# Released into the MIT License.
+
+#
+# 7z
+#
+
+# Compress
+7zs() {
+  local directories=("$@")
+  find "${directories[@]}" -maxdepth 1 -mindepth 1 -printf '%p.7z\0%p\0' | xargs -0 -P 0 -n 2 7za -mmt$(nproc) -mx1 -sdel a
+}
+
+# Best Compress
+7zs-best() {
+  local directories=("$@")
+  find "${directories[@]}" -maxdepth 1 -mindepth 1 -printf '%p.7z\0%p\0' | xargs -0 -P 0 -n 2 7za -mmt$(nproc) -mx9 -sdel a
+}
+
+# Uncompress
+un7zs() {
+  local directories=("$@")
+  find "${directories[@]}" -maxdepth 1 -type f -name '*.7z' -print0 | xargs -0 -P 0 -n 1 7za x
+  find "${directories[@]}" -maxdepth 1 -type f -name '*.7z' -print0 | xargs -0 -P 0 rm
+}
+
+#
+# bat
+#
+alias cat='bat'
+
+#
+# df
+#
+alias df='df -h'
+
+#
+# du
+#
+alias du='du -h'
+
+#
+# file
+#
+files() {
+  local directories=("$@")
+  find "${directories[@]}" -maxdepth 1 -print0 | xargs -0 -P 0 file
+}
+
+#
+# git
+#
+alias g='git'
+alias ga='git add'
+alias gb='git branch'
+alias gch='git checkout'
+alias gcl='git clone'
+alias gd='git diff'
+alias gcm='git commit'
+alias gf='git fetch'
+alias gg='git grep'
+alias gi='git init'
+alias gl='git log'
+alias gmr='git merge'
+alias gmv='git mv'
+alias gpl='git pull'
+alias gps='git push'
+alias grb='git rebase'
+alias grt='git reset'
+alias grr='git restore'
+alias grm='git rm'
+alias gst='git status'
+alias gsw='git switch'
+alias gt='git tag'
+
+gcm-amend-date() {
+  local date_string="$@"
+  git commit --amend --date "$(date --iso-8601=seconds -d "$date_string")" --no-edit
+  git rebase HEAD~
+}
+
+#
+# gzip
+#
+
+# Compress
+gzips() {
+  local directories=("$@")
+  find "${directories[@]}" -maxdepth 1 -type f -print0 | xargs -0 -P 0 -n 1 gzip --fast
+}
+
+# Best Compress
+gzips-best() {
+  local directories=("$@")
+  find "${directories[@]}" -maxdepth 1 -type f -print0 | xargs -0 -P 0 -n 1 gzip --best
+}
+
+# Uncompress
+gunzips() {
+  local directories=("$@")
+  find "${directories[@]}" -maxdepth 1 -type f -name '*.gz' -print0 | xargs -0 -P 0 -n 1 gunzip
+}
+
+#
+# ls
+#
+alias l='ls'
+alias la='ls -A'
+alias ll='ls -al'
+alias ls='ls -h'
+
+#
+# lz4
+#
+
+# Compress
+lz4s() {
+  local directories=("$@")
+  find "${directories[@]}" -maxdepth 1 -type f -print0 | xargs -0 -P 0 -n 1 lz4 --fast --rm
+}
+
+# Best Compress
+lz4s-best() {
+  local directories=("$@")
+  find "${directories[@]}" -maxdepth 1 -type f -print0 | xargs -0 -P 0 -n 1 lz4 --best --rm
+}
+
+# Uncompress
+unlz4s() {
+  local directories=("$@")
+  find "${directories[@]}" -maxdepth 1 -type f -name '*.lz4' -print0 | xargs -0 -P 0 -n 1 lz4 --rm -d
+}
+
+#
+# npm
+#
+alias n='npm'
+alias na='npm install'
+alias ni='npm init'
+alias nr='npm uninstall'
+
+#
+# nvim
+#
+alias e='nvim'
+
+#
+# pnpm
+#
+alias p='pnpm'
+alias pa='pnpm install'
+alias pi='pnpm init'
+alias pr='pnpm remove'
+
+#
+# rm
+#
+alias rm='rm -i'
+
+#
+# stat
+#
+stats() {
+  local directories=("$@")
+  find "${directories[@]}" -maxdepth 1 -print0 | xargs -0 -P 0 stat
+}
+
+#
+# tar
+#
+alias flat='flat-lz4'
+alias flat-best='flat-lz4-best'
+alias unflat='unflat-lz4'
+
+alias flat-gzip='tars && gzips'
+alias flat-gzip-best='tars && gzips-best'
+alias unflat-gzip='gunzips && untars'
+
+alias flat-lz4='tars && lz4s'
+alias flat-lz4-best='tars && lz4s-best'
+alias unflat-lz4='unlz4s && untars'
+
+alias flat-xz='tars && xzs'
+alias flat-xz-best='tars && xzs-best'
+alias unflat-xz='unxzs && untars'
+
+alias flat-zstd='tars && zstds'
+alias flat-zstd-best='tars && zstds-best'
+alias unflat-zstd='unzstds && untars'
+
+# Archive
+tars() {
+  local directories=("$@")
+  find "${directories[@]}" -maxdepth 1 -mindepth 1 -type d -printf '%p.tar\0%p\0' | xargs -0 -P 0 -n 2 tar --create --remove-files -f
+}
+
+# Unarchive
+untars() {
+  local directories=("$@")
+  find "${directories[@]}" -maxdepth 1 -type f -name '*.tar' -print0 | xargs -0 -P 0 -n 1 tar --extract -f
+  find "${directories[@]}" -maxdepth 1 -type f -name '*.tar' -print0 | xargs -0 -P 0 rm
+}
+
+#
+# task
+#
+alias ts='task'
+
+#
+# timew
+#
+alias tm='timew'
+
+#
+# tweet
+#
+alias t='tweet'
+alias tw='tweet'
+
+#
+# xz
+#
+
+# Compress
+xzs() {
+  local directories=("$@")
+  find "${directories[@]}" -maxdepth 1 -type f -print0 | xargs -0 -P 0 -n 1 xz -0
+}
+
+# Best Compress
+xzs-best() {
+  local directories=("$@")
+  find "${directories[@]}" -maxdepth 1 -type f -print0 | xargs -0 -P 0 -n 1 xz -9
+}
+
+# Uncompress
+unxzs() {
+  local directories=("$@")
+  find "${directories[@]}" -maxdepth 1 -type f -name '*.xz' -print0 | xargs -0 -P 0 -n 1 unxz
+}
+
+#
+# ZIP
+#
+
+# Compress
+zips() {
+  local directories=("$@")
+  find "${directories[@]}" -maxdepth 1 -mindepth 1 -printf '%p.zip\0%p\0' | xargs -0 -P 0 -n 2 7za -mmt$(nproc) -mx1 -sdel a
+}
+
+# Best Compress
+zips-best() {
+  local directories=("$@")
+  find "${directories[@]}" -maxdepth 1 -mindepth 1 -printf '%p.zip\0%p\0' | xargs -0 -P 0 -n 2 7za -mmt$(nproc) -mx9 -sdel a
+}
+
+# Uncompress
+unzips() {
+  local directories=("$@")
+  find "${directories[@]}" -maxdepth 1 -type f -name '*.zip' -print0 | xargs -0 -P 0 -n 1 7za x
+  find "${directories[@]}" -maxdepth 1 -type f -name '*.zip' -print0 | xargs -0 -P 0 rm
+}
+
+#
+# zstd
+#
+
+# Compress
+zstds() {
+  local directories=("$@")
+  find "${directories[@]}" -maxdepth 1 -type f -print0 | xargs -0 -P 0 -n 1 zstd --auto-threads=logical --fast --rm
+}
+
+# Best Compress
+zstds-best() {
+  local directories=("$@")
+  find "${directories[@]}" -maxdepth 1 -type f -print0 | xargs -0 -P 0 -n 1 zstd --auto-threads=logical --rm --ultra -22
+}
+
+# Uncompress
+unzstds() {
+  local directories=("$@")
+  find "${directories[@]}" -maxdepth 1 -type f -name '*.zst' -print0 | xargs -0 -P 0 -n 1 zstd --rm -d
+}
+
