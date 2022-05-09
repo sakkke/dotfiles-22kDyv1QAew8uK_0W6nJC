@@ -30,6 +30,16 @@ return require('packer').startup({function(use)
   })
   use 'editorconfig/editorconfig-vim'
   use {
+    'edluffy/specs.nvim',
+    config = function()
+      require('specs').setup({})
+      vim.api.nvim_set_keymap('n', 'h', [[h<Cmd>lua require('specs').show_specs()<CR>]], { noremap = true, silent = true })
+      vim.api.nvim_set_keymap('n', 'j', [[j<Cmd>lua require('specs').show_specs()<CR>]], { noremap = true, silent = true })
+      vim.api.nvim_set_keymap('n', 'k', [[k<Cmd>lua require('specs').show_specs()<CR>]], { noremap = true, silent = true })
+      vim.api.nvim_set_keymap('n', 'l', [[l<Cmd>lua require('specs').show_specs()<CR>]], { noremap = true, silent = true })
+    end,
+  }
+  use {
     'feline-nvim/feline.nvim',
     config = function()
       require('feline').setup {
