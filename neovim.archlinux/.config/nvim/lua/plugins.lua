@@ -25,8 +25,13 @@ return require('packer').startup({function(use)
   use({
     "sakkke/catppuccin-nvim", -- Forked from "catppuccin/nvim"
     as = "catppuccin",
+    config = function()
+      require('catppuccin').setup {
+        transparent_background = true,
+      }
+      vim.cmd[[colorscheme catppuccin]]
+    end,
     branch = "transparent",
-    run = ":colorscheme catppuccin"
   })
   use 'editorconfig/editorconfig-vim'
   use {
