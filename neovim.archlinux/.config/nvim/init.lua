@@ -1,4 +1,5 @@
 require 'plugins'
+vim.o.clipboard = 'unnamed'
 vim.o.list = true
 vim.o.listchars = 'eol:↵,extends:»,nbsp:*,precedes:«,space:·,tab:»-,trail:-'
 vim.o.mouse = 'a'
