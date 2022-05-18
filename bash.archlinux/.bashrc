@@ -16,6 +16,8 @@ if type sway &> /dev/null && ! pidof -q sway; then
   exec sway
 elif type tmux &> /dev/null && ! pidof -q tmux && [[ -z $TMUX ]]; then
   exec tmux
+elif type lf &> /dev/null && [[ -z $LF_LEVEL ]]; then
+  exec lf
 elif type ranger &> /dev/null && [[ -z $RANGER_LEVEL ]]; then
   exec ranger
 fi

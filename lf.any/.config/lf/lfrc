@@ -1,0 +1,20 @@
+set drawbox
+set icons
+set number
+set relativenumber
+set shell bash
+set shellflag -c
+
+cmd on-cd &{{
+  fmt="$(env STARSHIP_CONFIG="$HOME/.config/lf/starship.toml" starship prompt | sed -n 2p | sed -E 's/\\\\(\\[|\\])//g' || true)"
+  lf -remote "send $id set promptfmt \"$fmt\""
+}}
+
+# Set the startup prompt format
+on-cd
+
+# ranger compatible key mappings
+map @ push $<space>"$f"<home>
+map S push $$SHELL<enter>
+map s push $
+
