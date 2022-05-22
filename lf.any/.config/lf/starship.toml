@@ -1,4 +1,4 @@
-format = $all
+format = '$all'
 
 [hostname]
 ssh_only = false
