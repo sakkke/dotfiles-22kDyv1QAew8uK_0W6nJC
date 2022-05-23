@@ -78,7 +78,7 @@ alias gt='git tag'
 gcm-amend-date() {
   local date_string="$@"
   git commit --amend --date "$(date --iso-8601=seconds -d "$date_string")" --no-edit
-  git rebase HEAD~
+  git rebase --committer-date-is-author-date HEAD~
 }
 
 #
