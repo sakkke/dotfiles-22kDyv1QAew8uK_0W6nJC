@@ -130,7 +130,7 @@ gunzips() {
 alias l='ls'
 alias la='ls -A'
 alias ll='ls -al'
-alias ls='ls -h'
+alias ls='ls --color=auto -h'
 
 #
 # lz4
