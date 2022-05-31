@@ -103,6 +103,11 @@ gcm-amend-date() {
 }
 
 #
+# grep
+#
+alias grep='grep --color=auto'
+
+#
 # gzip
 #
 
