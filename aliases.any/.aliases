@@ -177,7 +177,7 @@ alias e='nvim'
 # pnpm
 #
 alias p='pnpm'
-alias pa='pnpm install'
+alias pa='pnpm add'
 alias pi='pnpm init'
 alias pr='pnpm remove'
 
