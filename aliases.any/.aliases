@@ -32,6 +32,11 @@ un7zs() {
 alias cat='bat'
 
 #
+# cd
+#
+alias ..='cd ..'
+
+#
 # df
 #
 alias df='df -h'
