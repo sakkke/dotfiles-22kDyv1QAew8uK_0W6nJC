@@ -195,6 +195,7 @@ alias pr='pnpm remove'
 # rm
 #
 alias rm='rm -i'
+alias rm!='rm -f'
 
 #
 # stat
