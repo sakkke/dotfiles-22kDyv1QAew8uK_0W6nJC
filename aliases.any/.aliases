@@ -171,6 +171,7 @@ unlz4s() {
 #
 alias n='npm'
 alias na='npm install'
+alias ncr='npm create'
 alias ni='npm init'
 alias nr='npm uninstall'
 alias nvmj='npm version major'
@@ -187,6 +188,7 @@ alias e='nvim'
 #
 alias p='pnpm'
 alias pa='pnpm add'
+alias pcr='pnpm create'
 alias pis='pnpm install'
 alias pit='pnpm init'
 alias pr='pnpm remove'
