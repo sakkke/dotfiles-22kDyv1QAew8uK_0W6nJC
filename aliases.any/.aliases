@@ -170,6 +170,11 @@ unlz4s() {
 }
 
 #
+# mkdir
+#
+alias mkdir='mkdir -p -v'
+
+#
 # npm
 #
 alias n='npm'
