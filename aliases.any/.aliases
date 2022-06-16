@@ -204,7 +204,7 @@ alias pr='pnpm remove'
 #
 # rm
 #
-alias rm='rm -i'
+alias rm='rm -i -v'
 alias rm!='rm -f'
 
 #
