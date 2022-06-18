@@ -144,6 +144,9 @@ gunzips() {
   find "${directories[@]}" -maxdepth 1 -type f -name '*.gz' -print0 | xargs -0 -P 0 -n 1 gunzip
 }
 
+# history
+alias hg='history | grep'
+
 #
 # ls
 #
