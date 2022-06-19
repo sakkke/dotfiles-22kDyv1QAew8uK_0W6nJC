@@ -37,6 +37,11 @@ alias cat='bat'
 alias ..='cd ..'
 
 #
+# clear
+#
+alias c='clear'
+
+#
 # df
 #
 alias df='df -h'
