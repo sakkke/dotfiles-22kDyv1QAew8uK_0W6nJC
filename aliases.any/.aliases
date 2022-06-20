@@ -215,6 +215,11 @@ alias pit='pnpm init'
 alias pr='pnpm remove'
 
 #
+# reset
+#
+alias r='reset'
+
+#
 # rm
 #
 alias rm='rm -i -v'
