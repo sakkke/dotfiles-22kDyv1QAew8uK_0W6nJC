@@ -154,6 +154,11 @@ gunzips() {
 alias hg='history | grep'
 
 #
+# ln
+#
+alias ln='ln -i'
+
+#
 # ls
 #
 alias l='ls'
