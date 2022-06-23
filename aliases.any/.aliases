@@ -43,6 +43,11 @@ alias ..='cd ..'
 alias c='clear'
 
 #
+# cp
+#
+alias cp='cp -R'
+
+#
 # df
 #
 alias df='df -h'
@@ -192,6 +197,11 @@ unlz4s() {
 # mkdir
 #
 alias mkdir='mkdir -p -v'
+
+#
+# mv
+#
+alias mv='mv -i'
 
 #
 # npm
