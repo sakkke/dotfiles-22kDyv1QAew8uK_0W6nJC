@@ -27,6 +27,14 @@ un7zs() {
 }
 
 #
+# bash
+#
+bash-c() {
+  local command="$@"
+  bash -c "$command"
+}
+
+#
 # bat
 #
 alias cat='bat'
