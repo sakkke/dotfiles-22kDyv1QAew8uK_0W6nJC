@@ -252,6 +252,14 @@ alias rm='rm -i -v'
 alias rm!='rm -f'
 
 #
+# sh
+#
+sh-c() {
+  local command="$@"
+  sh -c "$command"
+}
+
+#
 # stat
 #
 stats() {
