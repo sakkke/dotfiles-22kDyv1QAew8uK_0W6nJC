@@ -346,6 +346,11 @@ unxzs() {
 }
 
 #
+# Yarn
+#
+alias y='yarn'
+
+#
 # ZIP
 #
 
