@@ -349,6 +349,7 @@ unxzs() {
 # Yarn
 #
 alias y='yarn'
+alias ya='yarn add'
 
 #
 # ZIP
