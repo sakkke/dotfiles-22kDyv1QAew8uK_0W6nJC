@@ -351,6 +351,7 @@ unxzs() {
 alias y='yarn'
 alias ya='yarn add'
 alias yc='yarn create'
+alias yi='yarn init'
 
 #
 # ZIP
