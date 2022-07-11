@@ -351,6 +351,7 @@ unxzs() {
 alias y='yarn'
 alias ya='yarn add'
 alias yc='yarn create'
+alias yis='yarn install'
 alias yit='yarn init'
 alias yr='yarn remove'
 
