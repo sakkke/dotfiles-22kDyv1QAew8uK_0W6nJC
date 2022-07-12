@@ -272,6 +272,11 @@ stats() {
 }
 
 #
+# sudo
+#
+alias s='sudo'
+
+#
 # tar
 #
 alias flat='flat-lz4'
