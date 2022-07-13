@@ -65,6 +65,11 @@ alias cp='cp -R'
 alias df='df -h'
 
 #
+# diff
+#
+alias diff='diff --color=auto'
+
+#
 # du
 #
 alias du='du -h'
