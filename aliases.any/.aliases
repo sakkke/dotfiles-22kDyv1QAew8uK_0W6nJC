@@ -67,7 +67,7 @@ alias df='df -h'
 #
 # diff
 #
-alias diff='diff --color=auto'
+alias diff='diff --color'
 
 #
 # du
@@ -147,8 +147,8 @@ gcm-amend-date() {
 #
 # grep
 #
-alias egrep='egrep --color=auto'
-alias grep='grep --color=auto'
+alias egrep='egrep --color'
+alias grep='grep --color'
 
 #
 # gzip
@@ -188,7 +188,7 @@ alias ln='ln -i'
 alias l='ls'
 alias la='ls -A'
 alias ll='ls -al'
-alias ls='ls --color=auto -h'
+alias ls='ls --color -h'
 
 #
 # lz4
