@@ -339,6 +339,11 @@ alias t='tweet'
 alias tw='tweet'
 
 #
+# Vim
+#
+alias v='vim'
+
+#
 # xz
 #
 
