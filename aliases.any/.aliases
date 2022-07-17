@@ -342,6 +342,7 @@ alias tw='tweet'
 # Vim
 #
 alias v='vim'
+alias vr='vim -R'
 
 #
 # xz
