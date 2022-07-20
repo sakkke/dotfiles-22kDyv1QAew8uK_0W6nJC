@@ -62,6 +62,7 @@ alias cp='cp -R'
 #
 # cURL
 #
+alias ipinfo='curl https://ipinfo.io'
 alias wttr='curl https://wttr.in'
 
 #
