@@ -242,9 +242,9 @@ alias na='npm install'
 alias ncr='npm create'
 alias ni='npm init'
 alias nr='npm uninstall'
-alias nvmj='npm version major'
-alias nvmr='npm version minor'
-alias nvp='npm version patch'
+alias nsmj='npm version major'
+alias nsmr='npm version minor'
+alias nsp='npm version patch'
 
 #
 # nvim
