@@ -251,6 +251,7 @@ alias nsp='npm version patch'
 #
 alias e='nvim'
 alias nv='nvim'
+alias nvr='nvim -R'
 
 #
 # pnpm
