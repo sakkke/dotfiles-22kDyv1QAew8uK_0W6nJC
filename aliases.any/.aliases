@@ -86,6 +86,11 @@ alias diff='diff --color'
 alias du='du -h'
 
 #
+# exec
+#
+alias reload='exec "$SHELL"'
+
+#
 # file
 #
 files() {
