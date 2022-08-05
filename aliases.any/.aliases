@@ -49,6 +49,11 @@ alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias ......='cd ../../../../..'
 
+cd! () {
+  local directory="$1"
+  mkdir -p -v "$directory" && cd "$directory"
+}
+
 #
 # clear
 #
