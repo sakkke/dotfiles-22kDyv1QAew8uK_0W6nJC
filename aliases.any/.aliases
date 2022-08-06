@@ -43,11 +43,12 @@ alias cat='bat'
 # cd
 #
 alias -- -='cd -'
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
-alias .....='cd ../../../..'
 alias ......='cd ../../../../..'
+alias .....='cd ../../../..'
+alias ....='cd ../../..'
+alias ...='cd ../..'
+alias ..='cd ..'
+alias ~='cd'
 
 cd! () {
   local directory="$1"
